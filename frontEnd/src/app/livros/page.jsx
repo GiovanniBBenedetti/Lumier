@@ -1,8 +1,8 @@
 "use client"
 import { useState } from "react";
-import Image from "next/image";
 import axios from "axios";
-import Link from 'next/link';
+import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function Home() {
   const [email, setEmail] = useState('')
@@ -10,8 +10,12 @@ export default function Home() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:3000/auth/login', { email, senha });
-      localStorage.setItem('token', res.data.token)
+      console.log(email, senha)
+      const res = await axios.post('http://localhost:3002/livros', {
+        "email": email,
+        "senha": senha,
+    });
+      localStorage.setItem('token', res.data.token);
     } catch (err) {
       alert('Login falhou, senha ou email estão incorretos ');
       console.log(err)
@@ -26,8 +30,8 @@ export default function Home() {
             Email address
           </label>
           <input
-            placeholder="email"
-            onChange={e => setEmail(e.target.value)}
+          placeholder="email"
+          onChange={e => setEmail(e.target.value)}
             type="email"
             className="form-control"
             id="exampleInputEmail1"
@@ -42,8 +46,8 @@ export default function Home() {
             Password
           </label>
           <input
-            placeholder="senha"
-            onChange={e => setSenha(e.target.value)}
+          placeholder="senha"
+           onChange={e => setSenha(e.target.value)}
             type="password"
             className="form-control"
             id="exampleInputPassword1"
@@ -53,6 +57,7 @@ export default function Home() {
           Submit
         </button>
       </form>
+
     </div>
   );
 }

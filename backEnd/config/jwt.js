@@ -1,3 +1,1 @@
-export const JWT_SECRET = 'aadaa1decb34c36121423118503f98e6254ef1b42272f013bca9f3042a8ca816a4cd648795bde5d95a90d505dee85e56f75f70612ae70082ec2a79e1cfe423bb'
-
-//substituir pelo token ferado pelo arquivo generateSecret.js
+export const JWT_SECRET = 'daeba166ca20969fb6ceb7ad2f1a2fe49114f16eb9cbbd73e4a620494995dd27e99230c04c8b3aa89047af00eac9caad9750ea920b441a7161ceaad2718c8ec5'

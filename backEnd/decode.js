@@ -1,0 +1,8 @@
+import jwt from "jsonwebtoken"
+import { JWT_SECRET } from "./config/jwt.js"
+
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6MSwibm9tZSI6Ikpvw6NvIFNpbHZhIiwiZW1haWwiOiJqb2FvLnNpbHZhQGVtYWlsLmNvbSIsInNlbmhhIjoiJDJiJDEwJGpncVdJQlR4LkthWFp0dVVWQ3dEd2Uvb2R6azczNFUwZWlBTEF3elNseDZpV2dIb3pBUnhXIiwidGlwbyI6ImFkbWluIiwiZGF0YUNyaWFjYW8iOiIyMDI1LTA1LTE0VDE4OjU3OjE0LjAwMFoiLCJkYXRhQXR1YWxpemFjYW8iOiIyMDI1LTA1LTE0VDE5OjA1OjU3LjAwMFoifSwidGlwbyI6ImFkbWluIiwiaWF0IjoxNzQ3ODI2ODY0LCJleHAiOjE3NDc4MzA0NjR9.LCsCsuh9l9uouBgDUGpGE2uFf9bD_7NDKSvWD9P3GtE'
+
+const decoded = jwt.verify(token, JWT_SECRET)
+
+console.log(decoded)

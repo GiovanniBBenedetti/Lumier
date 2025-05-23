@@ -1,11 +1,11 @@
 import mysql from 'mysql2/promise'
-import bcypt from 'bcryptjs'
+import bcrypt from 'bcryptjs'
 
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: 'loginTeste',
+    password: 'Sen@i123',
+    database: 'portal',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -113,15 +113,15 @@ async function deleteRecord(table, where) {
         throw err;
     } finally {
         connection.release();
-            
     }
 }
 
-async function compare(senha, hash){
-    try{
-        return await bcypt.compare(senha, hash)
-    }catch (err){
-        console.log('Erro ao comparar a senha com hash ', err)
+async function compare(senha, hash) {
+    try {
+        return await bcrypt.compare(senha, hash)
+    }
+    catch (err) {
+        console.log('Erro ao comparar senha com o hash')
         return false
     }
 }
