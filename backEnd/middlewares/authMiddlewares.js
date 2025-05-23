@@ -15,6 +15,8 @@ const authMiddleware = (req, res, next) => {
         req.usuarioId = decoded.id
         req.usuarioNome = decoded.id.nome
         req.usuarioEmail = decoded.id.email
+        req.usuarioTipo = decoded.id.tipo
+        req.usuarioIdEspecifico = decoded.id.id
         next()
     }
     catch (err) {

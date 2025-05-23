@@ -16,28 +16,28 @@ export default function Home() {
         }
     }, []);
 
-    useEffect(()=>{
-        if(token){
+    useEffect(() => {
+        if (token) {
             handleToken()
         }
     }, [token])
+
     async function handleToken() {
-        try{
+        try {
             const response = await axios.get(`http://localhost:3000/comum`,
                 { headers: { "Authorization": `Bearer ${token}` } }
             )
-            setUsuario(response.data.usuario)
-           
         }
-        catch(err){
-            console.log(token)
+        catch (err) {
+            console.log(err)
         }
     }
-    
+
     const [titulo, setTitulo] = useState('')
     const [conteudo, setConteudo] = useState('')
-    const [email, setEmail] = useState('')
-    const [foto, setFoto] = useState('')
+    const [imagem, setImagem] = useState('')
+    const [imagem2, setImagem2] = useState('')
+    const [imagem3, setImagem3] = useState('')
 
     const handleCadastro = async (e) => {
         e.preventDefault();
@@ -46,8 +46,9 @@ export default function Home() {
                 {
                     titulo: titulo,
                     conteudo: conteudo,
-                    email: email,
-                    foto: foto
+                    imagem1: imagem,
+                    imagem2: imagem2,
+                    imagem3, imagem3
                 },
                 { headers: { "Authorization": `Bearer ${token}` } }
             )
@@ -61,7 +62,17 @@ export default function Home() {
         <div className="d-flex flex-column">
             {usuario
                 ? (
-                    <>{usuario}</>
+                    // <>{usuario.map((item, index) => {
+                    //     return(
+                    //         <div key={index} className="d-flex flex-column">
+                    //             <h5>{item.usuario}</h5>
+                    //             <h5>{item.email}</h5>
+                    //             <h5>{item.id}</h5>
+                    //             <h5>{item.tipo}</h5>
+                    //         </div>
+                    //     )
+                    // })}</>
+                    console.log(usuario)
                 )
                 : (
                     <>null</>
@@ -93,10 +104,37 @@ export default function Home() {
                     />
                 </div>
                 <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
+                        Imagem1
+                    </label>
                     <input
-                        value={"arthuryozhiyoka@gmail.com"}
-                        onChange={e => setEmail(e.target.value)}
-                        type="hidden"
+                        placeholder="Conteudo"
+                        onChange={e => setImagem(e.target.value)}
+                        type="text"
+                        className="form-control"
+                        id="exampleInputPassword1"
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
+                        Imagem2
+                    </label>
+                    <input
+                        placeholder="Conteudo"
+                        onChange={e => setImagem2(e.target.value)}
+                        type="text"
+                        className="form-control"
+                        id="exampleInputPassword1"
+                    />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="exampleInputPassword1" className="form-label">
+                        Imagem3
+                    </label>
+                    <input
+                        placeholder="Conteudo"
+                        onChange={e => setImagem3(e.target.value)}
+                        type="text"
                         className="form-control"
                         id="exampleInputPassword1"
                     />

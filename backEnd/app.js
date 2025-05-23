@@ -1,5 +1,4 @@
 import express from 'express'
-import livroRotas from './routes/noticiaRotas.js'
 import authRotas from './routes/authRotas.js'
 import comumRotas from './routes/comumRotas.js'
 import adminRotas from './routes/adminRotas.js'
@@ -9,7 +8,6 @@ const port = 3000
 
 app.use(cors())
 app.use(express.json())
-app.use('/livros', livroRotas)
 app.use('/auth', authRotas)
 app.use('/comum', comumRotas)
 app.use('/admin', adminRotas)

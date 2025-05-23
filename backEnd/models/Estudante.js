@@ -1,35 +1,35 @@
 import { read, readAll, create, update, deleteRecord } from "../config/database.js";
 
-const listarBlog = async () => {
+const listarEBlog = async () => {
     try {
-        return await readAll('noticia')
+        return await readAll('noticiaEstudante')
     } catch (err) {
         console.error('Erro ao listar blog: ', err)
         throw err
     }
 };
 
-const obterBlogPorId = async (id) => {
+const obterEBlogPorId = async (id) => {
     try {
-        return await read('noticia', `id = ${id}`)
+        return await read('noticiaEstudante', `id = ${id}`)
     } catch (err) {
         console.error('Erro ao obter blog por ID: ', err)
         throw err;
     }
 }
 
-const criarBlog = async (blogData) => {
+const criarEBlog = async (blogData) => {
     try {
-        return await create('noticia', blogData);
+        return await create('noticiaEstudante', blogData);
     } catch (error) {
         console.error('Erro ao criar blog:', error);
         throw error;
     }
 };
 
-const atualizarBlog = async (id, blogData) => {
+const atualizarEBlog = async (id, blogData) => {
     try {
-        await update('noticia', blogData, `id = ${id}`);
+        await update('noticiaEstudante', blogData, `id = ${id}`);
     } catch (error) {
         console.error('Erro ao atualizar blog:', error);
         throw error;
@@ -37,12 +37,12 @@ const atualizarBlog = async (id, blogData) => {
 };
 
 
-const excluirBlog = async (id) => {
+const excluirEBlog = async (id) => {
     try {
-        await deleteRecord('noticia', `id = ${id}`);
+        await deleteRecord('noticiaEstudante', `id = ${id}`);
     } catch (error) {
         console.error('Erro ao excluir blog:', error);
         throw error;
     }
 };
-export { listarBlog, obterBlogPorId, criarBlog, atualizarBlog, excluirBlog }
+export { listarEBlog, obterEBlogPorId, criarEBlog, atualizarEBlog, excluirEBlog }

@@ -1,16 +1,20 @@
-import { read, compare, create, readAll } from '../config/database.js'
+import { criarEBlog } from "../models/Estudante.js"
 
 const criarNoticiaController = async (req, res) => {
     try {
-        const { titulo, conteudo, email } = req.body
-        
+        const { titulo, conteudo, imagem1, imagem2, imagem3 } = req.body
+
         const noticiaData = {
             titulo: titulo,
-            texto: conteudo,
-            usuario: email
+            conteudo: conteudo,
+            data_publicacao: new Date(),
+            autor: req.usuarioNome,
+            imagem1: imagem1,
+            imagem2: imagem2,
+            imagem3: imagem3,
         }
 
-        const noticiaId = await create('noticiaEstudante', noticiaData)
+        const noticiaId = await criarEBlog(noticiaData)
         res.status(201).json({ mensagem: 'Notícia enviada para revisão', noticiaId })
     }
     catch (err) {
