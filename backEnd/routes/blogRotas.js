@@ -1,14 +1,14 @@
-import express from 'express';
-import { listarBlogController, obterBlogPorIdController, criarBlogController, atualizarBlogController, excluirBlogController } from '../controllers/blogController.js';
-import authMiddleware from '../middlewares/authMiddleware.js';
+import express from 'express'
+import { criarBlogController, atualizarBlogController, excluirBlogController, listarBlogController, obterBlogPorIdController} from '../controllers/blogController.js'
+import authMiddleware from '../middlewares/authMiddleware.js'
+import isAdmin from '../middlewares/adminMiddlewares.js'
 
-const router = express.Router();
+const router = express.Router()
 
+router.post('/', authMiddleware, isAdmin, criarBlogController )
+router.put('/:id', authMiddleware, isAdmin, atualizarBlogController )
+router.delete('/:id', authMiddleware, isAdmin, excluirBlogController)
 
-
-router.post('/', authMiddleware,  criarBlogController);
-router.put('/:id', authMiddleware, atualizarBlogController);
-router.delete('/:id', authMiddleware, excluirBlogController);
 
 router.get('/', listarBlogController)
 router.get('/:id', obterBlogPorIdController)
@@ -24,4 +24,4 @@ router.options('/:id', (req, res) => {
 })
 
 
-export default router
+export default router   
