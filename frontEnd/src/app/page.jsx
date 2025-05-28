@@ -1,21 +1,13 @@
 'use client'
 
-import Link from "next/link";
 
 
-export default function Home() {
+export default function HomePage() {
 
-
-  
-
-  
 
   return (
-   <>
+    <div style={{ padding: '2rem' }}>
 
-   </>
-  );
+    </div>
+  )
 }
-
-
-

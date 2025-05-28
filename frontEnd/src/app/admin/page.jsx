@@ -11,11 +11,13 @@ export default function Adicionar() {
     const [autor, setAutor] = useState("")
     const [idParaRemover, setIdParaRemover] = useState("")
     const [blog,setBlog] = useState()
+     const token = localStorage.getItem('token')
+
 
     const handleAdicionar = async (e) => {
         e.preventDefault()
 
-        const token = localStorage.getItem('token')
+   
         if (!token) {
             alert("Token não encontrado.")
             return
@@ -31,10 +33,11 @@ export default function Adicionar() {
                 body: JSON.stringify({
                     titulo,
                     conteudo,
+                    autor,
                     imagem1,
                     imagem2,
                     imagem3,
-                    autor
+                
                 })
             })
 
@@ -49,7 +52,6 @@ export default function Adicionar() {
     }
 
     const handleRemover = async () => {
-        const token = localStorage.getItem('token')
         if (!token) {
             alert("Token não encontrado.")
             return
@@ -78,14 +80,6 @@ export default function Adicionar() {
             alert('Erro ao remover publicação' )
         }
 
-        useEffect(() =>{
-            fetch("http://localhost:3200/blog")
-            .then((response) => response.json())
-            .then((information) => {
-            setBlog(information);
-            });
-            
-          }, [])
     }
 
 
