@@ -8,6 +8,7 @@ const port = 3200;
 
 app.use(cors())
 app.use(express.json())
+app.use('/uploads', express.static('uploads'));
 
 app.use('/blog', blogRotas);
 app.use('/auth', authRotas)
