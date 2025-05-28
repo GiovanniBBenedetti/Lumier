@@ -5,40 +5,33 @@ export default function Adicionar() {
 
     const [titulo, setTitulo] = useState("")
     const [conteudo, setConteudo] = useState("")
-    const [imagem1, setImagem1] = useState("")
-    const [imagem2, setImagem2] = useState("")
-    const [imagem3, setImagem3] = useState("")
+    const [imagem1, setImagem1] = useState(null)
     const [autor, setAutor] = useState("")
     const [idParaRemover, setIdParaRemover] = useState("")
-    const [blog,setBlog] = useState()
-     const token = localStorage.getItem('token')
-
+    const [blog, setBlog] = useState()
+    const token = localStorage.getItem('token')
 
     const handleAdicionar = async (e) => {
         e.preventDefault()
 
-   
         if (!token) {
             alert("Token não encontrado.")
             return
         }
 
         try {
+            const formData = new FormData()
+            formData.append("titulo", titulo)
+            formData.append("conteudo", conteudo)
+            formData.append("autor", autor)
+            if (imagem1) formData.append("imagem1", imagem1)
+
             const response = await fetch(`http://localhost:3200/blog`, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify({
-                    titulo,
-                    conteudo,
-                    autor,
-                    imagem1,
-                    imagem2,
-                    imagem3,
-                
-                })
+                body: formData
             })
 
             if (!response.ok) {
@@ -75,17 +68,15 @@ export default function Adicionar() {
             }
 
             alert("Publicação removida com sucesso!")
-            setIdParaRemover("") 
+            setIdParaRemover("")
         } catch (err) {
-            alert('Erro ao remover publicação' )
+            alert('Erro ao remover publicação')
         }
-
     }
-
 
     return (
         <>
-            <form id="blogForm" onSubmit={handleAdicionar}>
+            <form id="blogForm" onSubmit={handleAdicionar} encType="multipart/form-data">
                 <label htmlFor="titulo">Título:</label>
                 <input type="text" id="titulo" name="titulo" onChange={e => setTitulo(e.target.value)} />
 
@@ -95,21 +86,19 @@ export default function Adicionar() {
                 <label htmlFor="autor">Autor:</label>
                 <input type="text" id="autor" name="autor" onChange={e => setAutor(e.target.value)} />
 
-                <label htmlFor="Imagem1">Imagem 1:</label>
-                <input type="text" id="Imagem1" name="Imagem1" onChange={e => setImagem1(e.target.value)} />
-
-                <label htmlFor="Imagem2">Imagem 2:</label>
-                <input type="text" id="Imagem2" name="Imagem2" onChange={e => setImagem2(e.target.value)} />
-
-                <label htmlFor="Imagem3">Imagem 3:</label>
-                <input type="text" id="Imagem3" name="Imagem3" onChange={e => setImagem3(e.target.value)} />
+                <label htmlFor="imagem1">Imagem:</label>
+                <input
+                    type="file"
+                    id="imagem1"
+                    name="imagem1"
+                    accept="image/*"
+                    onChange={e => setImagem1(e.target.files[0])}
+                />
 
                 <button type="submit">Adicionar Livro</button>
             </form>
 
             <hr />
-
-
 
             <div>
                 <h3>Remover publicação</h3>

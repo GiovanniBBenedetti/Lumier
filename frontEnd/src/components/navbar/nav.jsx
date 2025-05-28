@@ -26,7 +26,7 @@ export default function Nav() {
             <Link href='/'>Home</Link>
             <Link href='/blogs'>Blogs</Link>
             {usuario ? (
-                <Link href='/'>Olá {usuario.nome ?? 'usuário'}</Link>
+                <p>Olá {usuario.nome ?? 'usuário'}</p>
             ) : (
                 <>
                     <Link href="/login">Login</Link>
