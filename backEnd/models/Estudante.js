@@ -9,11 +9,11 @@ const listarEBlog = async () => {
     }
 };
 
-const obterEBlogPorId = async (id) => {
+const obterEBlogPorUser = async (autor) => {
     try {
-        return await read('noticiaEstudante', `id = ${id}`)
+        return await read('noticiaEstudante', `autor = '${autor}'`)
     } catch (err) {
-        console.error('Erro ao obter blog por ID: ', err)
+        console.error('Erro ao obter blog por autor: ', err)
         throw err;
     }
 }
@@ -45,4 +45,4 @@ const excluirEBlog = async (id) => {
         throw error;
     }
 };
-export { listarEBlog, obterEBlogPorId, criarEBlog, atualizarEBlog, excluirEBlog }
+export { listarEBlog, obterEBlogPorUser, criarEBlog, atualizarEBlog, excluirEBlog }

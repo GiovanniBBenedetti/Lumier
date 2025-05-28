@@ -9,11 +9,11 @@ const listarBlog = async () => {
     }
 };
 
-const obterBlogPorId = async (id) => {
+const obterBlogPorUser = async (user) => {
     try {
-        return await read('noticia', `id = ${id}`)
+        return await read('noticia', `autor = ${user}`)
     } catch (err) {
-        console.error('Erro ao obter blog por ID: ', err)
+        console.error('Erro ao obter blog por autor: ', err)
         throw err;
     }
 }
@@ -45,4 +45,4 @@ const excluirBlog = async (id) => {
         throw error;
     }
 };
-export { listarBlog, obterBlogPorId, criarBlog, atualizarBlog, excluirBlog }
+export { listarBlog, obterBlogPorUser, criarBlog, atualizarBlog, excluirBlog }

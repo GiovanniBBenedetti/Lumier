@@ -27,7 +27,7 @@ async function readAll(table, where = null) {
         const [rows] = await connection.execute(sql);
         return rows;
     } catch (err) {
-        console.error('Erro ao ler registros: ', err);
+        console.error('Erro lendo registros: ', err);
         throw err;
     } finally {
         connection.release();
@@ -45,9 +45,9 @@ async function read(table, where) {
         }
 
         const [rows] = await connection.execute(sql);
-        return rows[0] || null;
+        return rows || null;
     } catch (err) {
-        console.error('Erro ao ler registros: ', err);
+        console.error('Erro lendo registros: ', err);
         throw err;
     } finally {
         connection.release();
@@ -73,7 +73,7 @@ async function create(table, data) {
 
         return result.insertId;
     } catch (err) {
-        console.error('Erro ao inserir registros: ', err);
+        console.error('Erro inserindo registros: ', err);
         throw err;
     } finally {
         connection.release();
@@ -94,7 +94,7 @@ async function update(table, data, where) {
         const [result] = await connection.execute(sql, [...values]);
         return result.affectedRows;
     } catch (err) {
-        console.error('Erro ao atualizar registros: ', err);
+        console.error('Erro atualizando registros: ', err);
         throw err;
     } finally {
         connection.release();
@@ -109,7 +109,7 @@ async function deleteRecord(table, where) {
         const [result] = await connection.execute(sql);
         return result.affectedRows;
     } catch (err) {
-        console.error('Erro ao excluir registros: ', err);
+        console.error('Erro excluindo registros: ', err);
         throw err;
     } finally {
         connection.release();
@@ -121,7 +121,7 @@ async function compare(senha, hash) {
         return await bcrypt.compare(senha, hash)
     }
     catch (err) {
-        console.log('Erro ao comparar senha com o hash')
+        console.log('Erro comparando senha com o hash: ', err)
         return false
     }
 }

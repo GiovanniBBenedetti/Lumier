@@ -12,7 +12,8 @@ export default function Home() {
     try {
       const res = await axios.post('http://localhost:3000/auth/login', { email, senha });
       localStorage.setItem('token', res.data.token)
-      alert('Sucesso no login');
+      console.log(res.data.token)
+      alert('Sucesso no login')
     } catch (err) {
       alert('Login falhou, senha ou email estão incorretos ');
       console.log(err)

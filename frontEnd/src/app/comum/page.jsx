@@ -7,6 +7,7 @@ import Image from "next/image"
 export default function Home() {
     const [token, setToken] = useState('')
     const [usuario, setUsuario] = useState('')
+    const [blogs, setBlogs] = useState('')
     useEffect(() => {
         if (typeof window !== "undefined") {
             const storage = localStorage.getItem("token");
@@ -27,6 +28,27 @@ export default function Home() {
             const response = await axios.get(`http://localhost:3000/comum`,
                 { headers: { "Authorization": `Bearer ${token}` } }
             )
+            setUsuario(response.data.usuario)
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        if (usuario) {
+            get()
+            console.log('IjuiHE')
+        }
+    }, [usuario])
+
+    async function get() {
+        try {
+            const response = await axios.get(`http://localhost:3000/comum/${usuario}`,
+                { headers: { "Authorization": `Bearer ${token}` } }
+            )
+            setBlogs(response.data)
+            console.log(response.data)
         }
         catch (err) {
             console.log(err)
@@ -53,6 +75,9 @@ export default function Home() {
                 { headers: { "Authorization": `Bearer ${token}` } }
             )
             alert('Notícia enviada com sucesso')
+            setTimeout(() => {
+                get()
+            }, 100)
         } catch (err) {
             alert('Houve um erro ao enviar a notícia ')
             console.log(err)
@@ -60,23 +85,10 @@ export default function Home() {
     }
     return (
         <div className="d-flex flex-column">
-            {usuario
-                ? (
-                    // <>{usuario.map((item, index) => {
-                    //     return(
-                    //         <div key={index} className="d-flex flex-column">
-                    //             <h5>{item.usuario}</h5>
-                    //             <h5>{item.email}</h5>
-                    //             <h5>{item.id}</h5>
-                    //             <h5>{item.tipo}</h5>
-                    //         </div>
-                    //     )
-                    // })}</>
-                    console.log(usuario)
-                )
-                : (
-                    <>null</>
-                )}
+            <div className="d-flex justify-content-center">
+                {usuario}
+            </div>
+
             <form className="m-5" onSubmit={handleCadastro}>
                 <div >
                     <label htmlFor="exampleInputEmail1" className="form-label">
@@ -143,7 +155,32 @@ export default function Home() {
                     Submit
                 </button>
             </form>
+            <h2 className="text-center">Sua notícias</h2>
+            {blogs ? (
+                <>
+                    {blogs.map((item, index) => {
+                            return (
+                                <div key={index} className="card m-5">
+                                    <div className="card-body">
+                                        <h5 className="card-title">{item.titulo}</h5>
+                                        <p className="card-text">
+                                            {item.conteudo}
+                                        </p>
+                                        <p className="card-text">
+                                            Estado: {item.autorizacao}
+                                        </p>
+                                    </div>
+                                </div>
+                            )
 
+                    })}
+                </>
+            )
+                : (
+                    <>
+                    </>
+                )
+            }
         </div>
     );
 }
