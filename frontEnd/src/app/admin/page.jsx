@@ -7,7 +7,6 @@ export default function Adicionar() {
     const [imagem1, setImagem1] = useState(null)
     const [autor, setAutor] = useState("")
     const [idParaRemover, setIdParaRemover] = useState("")
-    const [blog, setBlog] = useState()
     const [token, setToken] = useState("")
 
     useEffect(() => {
@@ -40,9 +39,7 @@ export default function Adicionar() {
                 body: formData
             })
 
-            if (!response.ok) {
-                throw new Error("Erro ao enviar os dados.")
-            }
+        
 
             alert("Publicação adicionada com sucesso!")
         } catch (err) {

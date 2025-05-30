@@ -1,10 +1,8 @@
 import { create, executeQuery } from "../config/database.js";
 
-const table = "comentariosBlog";
-
 const criarComentario = async (comentarioData) => {
   try {
-    return await create(table, comentarioData);
+    return await create("comentariosBlog", comentarioData);
   } catch (error) {
     console.error("Erro ao criar comentário:", error);
     throw error;
@@ -18,7 +16,6 @@ const listarComentarioPorId = async (postId) => {
       FROM comentariosBlog
       JOIN usuarios ON comentariosBlog.user_id = usuarios.id
       WHERE comentariosBlog.post_id = ?
-      ORDER BY comentariosBlog.data_publicacao DESC
     `;
     return await executeQuery(sql, [postId]);
   } catch (error) {
