@@ -1,7 +1,6 @@
 import express from 'express'
 import { criarBlogController, atualizarBlogController, excluirBlogController, listarBlogController, obterBlogPorIdController} from '../controllers/blogController.js'
 import authMiddleware from '../middlewares/authMiddleware.js'
-import isAdmin from '../middlewares/adminMiddlewares.js'
 import multer from 'multer';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,9 +21,9 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-router.post('/', authMiddleware,upload.single('imagem1'), isAdmin, criarBlogController )
-router.put('/:id', authMiddleware,upload.single('imagem1'), isAdmin, atualizarBlogController )
-router.delete('/:id', authMiddleware, isAdmin, excluirBlogController)
+router.post('/', authMiddleware,upload.single('imagem1') , criarBlogController )
+router.put('/:id', authMiddleware,upload.single('imagem1') , atualizarBlogController )
+router.delete('/:id', authMiddleware, excluirBlogController)
 
 
 router.get('/', listarBlogController)

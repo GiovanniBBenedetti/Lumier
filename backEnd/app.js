@@ -1,6 +1,7 @@
 import express from 'express'
 import blogRotas from './routes/blogRotas.js'
 import authRotas from './routes/authRotas.js'
+import comentariosBlogRotas from './routes/comentarioBlog.js'
 import cors from 'cors'
 const app = express()
 const port = 3200;
@@ -12,6 +13,7 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('/blog', blogRotas);
 app.use('/auth', authRotas)
+app.use("/comentariosBlog", comentariosBlogRotas);
 
 app.get('/', (req,res) =>{
     res.status(200).json({mensagem: 'Bem vindo a Api Restful da Lumier'})

@@ -1,15 +1,21 @@
 'use client'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Adicionar() {
-
     const [titulo, setTitulo] = useState("")
     const [conteudo, setConteudo] = useState("")
     const [imagem1, setImagem1] = useState(null)
     const [autor, setAutor] = useState("")
     const [idParaRemover, setIdParaRemover] = useState("")
     const [blog, setBlog] = useState()
-    const token = localStorage.getItem('token')
+    const [token, setToken] = useState("")
+
+    useEffect(() => {
+        const savedToken = localStorage.getItem('token')
+        if (savedToken) {
+            setToken(savedToken)
+        }
+    }, [])
 
     const handleAdicionar = async (e) => {
         e.preventDefault()

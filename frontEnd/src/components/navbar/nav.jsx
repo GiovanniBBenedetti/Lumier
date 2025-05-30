@@ -13,27 +13,30 @@ export default function Nav() {
             try {
                 const decoded = jwtDecode(token)
                 setUsuario(decoded)
-
             } catch (err) {
                 console.error('Token inválido:', err)
                 localStorage.removeItem('token')
             }
         }
     }, [])
+
+    const handleLogout = () => {
+        localStorage.removeItem('token')
+        window.location.href = '/login'
+    }
+
     return (
-        <>
-        <div className='d-flex gap-5'>
+        <nav className='d-flex gap-5'>
             <Link href='/'>Home</Link>
             <Link href='/blogs'>Blogs</Link>
             {usuario ? (
-                <p>Olá {usuario.nome ?? 'usuário'}</p>
-            ) : (
                 <>
-                    <Link href="/login">Login</Link>
+                    <span>Olá {usuario.nome ?? 'usuário'}</span>
+                    <button onClick={handleLogout}>Sair</button>
                 </>
+            ) : (
+                <Link href="/login">Login</Link>
             )}
-        </div>
-
-        </>
+        </nav>
     )
 }

@@ -15,6 +15,23 @@ async function getConnection() {
     return pool.getConnection();
 }
 
+
+//Função para executar outra querys (exemplo o like do mysql)
+async function executeQuery(sql, params = []) {
+    const connection = await getConnection();
+    try {
+        const [rows] = await connection.execute(sql, params);
+        return rows;
+    } catch (err) {
+        console.error('Erro ao executar query: ', err);
+        throw err;
+    } finally {
+        connection.release();
+    }
+}
+
+
+
 //Função para ler todos os registros
 async function readAll(table, where = null) {
     const connection = await getConnection();
@@ -126,4 +143,4 @@ async function compare(senha, hash){
     }
 }
 
-export { create, readAll, read, update, deleteRecord, compare }
+export { create, readAll, read, update, deleteRecord, compare, executeQuery }
