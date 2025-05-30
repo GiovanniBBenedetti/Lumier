@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import { JWT_SECRET } from '../config/jwt.js'
+import { response } from 'express'
 
 const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization
@@ -12,14 +13,12 @@ const authMiddleware = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, JWT_SECRET)
-        req.usuarioId = decoded.id[0]
-        req.usuario = decoded
-        req.tipo = decoded.id.tipo
+        req.jwt = decoded
         next()
     }
     catch (err) {
         console.log(err)
-        return res.status(403).json({ menssagem: "Não autorizado: Token inválido" })
+        return res.status(403).json({ menssagem: "Não autorizado: Token inválidooooo" })
     }
 }
 

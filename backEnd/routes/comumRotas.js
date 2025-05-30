@@ -3,11 +3,7 @@ import authMiddleware from '../middlewares/authMiddlewares.js'
 import { criarNoticiaController, userBlogController } from '../controllers/ComumController.js'
 const router = express.Router()
 
-router.get('/', authMiddleware, (req, res) => {
-    res.status(200).json({ usuario: req.usuarioId.nome, email:req.usuarioId.email, tipo: req.usuarioId.tipo})
-})
-
-router.get('/:autor', authMiddleware, userBlogController)
+router.get('/', authMiddleware, userBlogController)
 
 router.post('/', authMiddleware, criarNoticiaController)
 

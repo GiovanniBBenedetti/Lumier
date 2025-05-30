@@ -5,12 +5,11 @@ const listarController = async (req, res) => {
     try {
         const usuarios = await listarEBlog('noticiaEstudante')
         if (req.tipo != 'admin') {
-            res.status(403).json({ mensagem: 'Não autorizado' })
+            return res.status(403).json({ mensagem: 'Não autorizado' })
         }
         else {
             return res.status(200).json(usuarios)
         }
-
     }
     catch (err) {
         console.error('Erro listando sugestões: ', err)
@@ -40,8 +39,6 @@ const criarBlogController = async (req, res) => {
             imagem3: noticia.item.imagem3,
             autorizacao: 'aceito',
         }
-        console.log(blogData)
-        console.log(blogEData)
         const blogId = await criarBlog(blogData)
         const blogUpd = await atualizarEBlog(noticia.item.id, blogEData)
         res.status(201).json({ mensagem: 'Blog aprovado', blogId, blogUpd })

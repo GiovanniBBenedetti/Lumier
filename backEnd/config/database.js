@@ -1,5 +1,6 @@
 import mysql from 'mysql2/promise'
 import bcrypt from 'bcryptjs'
+import { json } from 'express';
 
 const pool = mysql.createPool({
     host: 'localhost',
@@ -90,7 +91,7 @@ async function update(table, data, where) {
 
         const sql = `UPDATE ${table} SET ${set} WHERE ${where}`;
         const values = Object.values(data);
-
+        console.log(sql, values, data)
         const [result] = await connection.execute(sql, [...values]);
         return result.affectedRows;
     } catch (err) {

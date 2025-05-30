@@ -26,27 +26,11 @@ export default function Home() {
     }, [token])
 
     async function handleToken() {
-        try {
-            const response = await axios.get(`http://localhost:3000/comum`,
-                { headers: { "Authorization": `Bearer ${token}` } }
-            )
-            setTipo(response.data.tipo)
-            setUsuario(response.data.usuario)
-        }
-        catch (err) {
-            console.log(err)
-        }
-    }
-
-    async function get() {
-        try {
-            if (usuario) {
-                const response = await axios.get(`http://localhost:3000/admin/estudantes`, { headers: { "Authorization": `Bearer ${token}` } })
-                setNoticias(response.data)
-            }
-        }
-        catch (err) {
-
+        if (usuario) {
+            const response = await axios.get(`http://localhost:3000/admin/estudantes`, { headers: { "Authorization": `Bearer ${token}` } })
+            setNoticias(response.data)
+            console.log(response)
+            const status = response.status
         }
 
     }
@@ -54,7 +38,7 @@ export default function Home() {
         get()
     }, [usuario])
     async function handleClick(noticia) {
-        axios.post(`http://localhost:3000/admin/estudantes`, { noticia })
+        axios.post(`http://localhost:3000/admin/estudantes`, { noticia }, { headers: { "Authorization": `Bearer ${token}` } })
         setTimeout(() => {
             get()
         }, 100)
@@ -66,14 +50,6 @@ export default function Home() {
             get()
         }, 100)
     }
-    // useEffect(() => {
-    //     if(tipo){
-    //         if (tipo != 'admin') {
-    //             redirect('/forbidden')
-    //         }
-    //     }
-    // }, [tipo])
-
 
     return (
         <div className="d-flex flex-column">

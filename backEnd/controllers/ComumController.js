@@ -9,7 +9,7 @@ const criarNoticiaController = async (req, res) => {
             titulo: titulo,
             conteudo: conteudo,
             data_publicacao: new Date(),
-            autor: req.usuarioId.nome,
+            autor: req.jwt.nome,
             imagem1: imagem1,
             imagem2: imagem2,
             imagem3: imagem3,
@@ -28,14 +28,13 @@ const criarNoticiaController = async (req, res) => {
 
 const userBlogController = async (req, res) => {
     try {
-        const autor = req.params.autor
+        const autor = req.jwt.nome
         const blog = await obterEBlogPorUser(autor)
-        console.log(blog)
         if (blog) {
-            return res.json(blog)
+            return res.json({blog, nome: autor})
         }
         else {
-            res.status(404).json({ mensagem: "Não há blogs com este autor" })
+            res.status(404).json({ mensagem: "Não há blogs com este autor"})
         }
     }
     catch (err) {

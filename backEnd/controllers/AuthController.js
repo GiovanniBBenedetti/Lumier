@@ -3,6 +3,7 @@ import { read, compare, create, readAll } from '../config/database.js'
 import { JWT_SECRET } from "../config/jwt.js"
 import bcrypt from "bcryptjs"
 import { generateHashedPassword } from "../hashPassword.js"
+import { atualizarUsario } from "../models/Usuario.js"
 
 const cadastroAdminController = async (req, res) => {
     const { email, senha, nome } = req.body
@@ -31,12 +32,11 @@ const buscaController = async (req, res) => {
     try {
         const email = req.params.email
         const usuario = await read('usuarios', `email = '${email}'`)
-
-        if (!usuario) {
-            return res.status(200).json({ double: false, email: email })
+        if (usuario.length <= 0) {
+            return res.status(200).json({ double: false, usuario: usuario[0] })
         }
 
-        return res.status(200).json({ double: true, email: email })
+        return res.status(200).json({ double: true, usuario: usuario[0] })
     }
     catch (err) {
         console.error('Erro listando usuários: ', err)
@@ -60,6 +60,10 @@ const loginController = async (req, res) => {
 
     try {
         const usuario = await read('usuarios', `email = '${email}'`)
+        let data = null
+        usuario.forEach(element => {
+            data = element
+        })
 
         if (!usuario) {
             return res.status(404).json({ menssagem: "Usuário não encontrado" })
@@ -71,7 +75,7 @@ const loginController = async (req, res) => {
             return res.status(401).json({ menssagem: "senha incorreta" })
         }
 
-        const token = jwt.sign({ id: usuario, tipo: usuario.tipo }, JWT_SECRET, { expiresIn: '1h' })
+        const token = jwt.sign(data, JWT_SECRET, { expiresIn: '1h' })
 
         res.json({ menssagem: 'Login realizado com sucesso ', token })
     }
@@ -95,6 +99,7 @@ const cadastroController = async (req, res) => {
             dataCriacao: dataAtual,
             dataAtualizacao: dataAtual
         }
+        console.log(usuarioData)
         const usuarioId = await create('usuarios', usuarioData)
         res.status(201).json({ mensagem: 'Usuário criado com sucesso' })
     }
@@ -104,5 +109,29 @@ const cadastroController = async (req, res) => {
     }
 }
 
-export { loginController, cadastroController, buscaController, listarController, cadastroAdminController }
+const atualizarController = async (req, res) => {
+    try {
+        const { email, senha, nome, dataCriacao } = req.body
+        console.log(req.body)
+        const senhaHasheada = await generateHashedPassword(senha)
+        const dataAtualizacao = new Date()
+        const novaData = new Date(dataCriacao)
+        const usuarioData = {
+            "email": email,
+            "senha": senhaHasheada,
+            "nome": nome,
+            "tipo": "comum",
+            "dataCriacao": novaData,
+            "dataAtualizacao": dataAtualizacao
+        }
+        const usuarioId = await atualizarUsario(usuarioData, email)
+        res.status(201).json({ mensagem: 'Usuário atualizado com sucesso'})
+    }
+    catch (err) {
+        console.error('Erro atualizando usuário: ', err)
+        res.status(500).json({ menssagem: "Erro ao atualizar usuário" })
+    }
+}
+
+export { loginController, cadastroController, buscaController, listarController, cadastroAdminController, atualizarController }
 

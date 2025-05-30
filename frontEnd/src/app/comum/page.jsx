@@ -8,6 +8,8 @@ export default function Home() {
     const [token, setToken] = useState('')
     const [usuario, setUsuario] = useState('')
     const [blogs, setBlogs] = useState('')
+    const [email, setEmail] = useState('')
+    const [senha, setSenha] = useState('')
     useEffect(() => {
         if (typeof window !== "undefined") {
             const storage = localStorage.getItem("token");
@@ -28,27 +30,11 @@ export default function Home() {
             const response = await axios.get(`http://localhost:3000/comum`,
                 { headers: { "Authorization": `Bearer ${token}` } }
             )
-            setUsuario(response.data.usuario)
-        }
-        catch (err) {
-            console.log(err)
-        }
-    }
-
-    useEffect(() => {
-        if (usuario) {
-            get()
-            console.log('IjuiHE')
-        }
-    }, [usuario])
-
-    async function get() {
-        try {
-            const response = await axios.get(`http://localhost:3000/comum/${usuario}`,
-                { headers: { "Authorization": `Bearer ${token}` } }
-            )
-            setBlogs(response.data)
-            console.log(response.data)
+            setBlogs(response.data.blog)
+            if(response.data.blog == ''){
+                setBlogs('')
+            }
+            setUsuario(response.data.nome)
         }
         catch (err) {
             console.log(err)
@@ -85,10 +71,9 @@ export default function Home() {
     }
     return (
         <div className="d-flex flex-column">
-            <div className="d-flex justify-content-center">
-                {usuario}
+            <div  className="text-center">
+                <h1>{usuario}</h1>
             </div>
-
             <form className="m-5" onSubmit={handleCadastro}>
                 <div >
                     <label htmlFor="exampleInputEmail1" className="form-label">
@@ -159,25 +144,29 @@ export default function Home() {
             {blogs ? (
                 <>
                     {blogs.map((item, index) => {
-                            return (
-                                <div key={index} className="card m-5">
-                                    <div className="card-body">
-                                        <h5 className="card-title">{item.titulo}</h5>
-                                        <p className="card-text">
-                                            {item.conteudo}
-                                        </p>
-                                        <p className="card-text">
-                                            Estado: {item.autorizacao}
-                                        </p>
-                                    </div>
+                        return (
+                            <div key={index} className="card m-5">
+                                <div className="card-body">
+                                    <h5 className="card-title">{item.titulo}</h5>
+                                    <p className="card-text">
+                                        {item.conteudo}
+                                    </p>
+                                    <p className="card-text">
+                                        Estado: {item.autorizacao}
+                                    </p>
                                 </div>
-                            )
+                            </div>
+                        )
 
                     })}
                 </>
             )
                 : (
                     <>
+                    <div className="w-100 text-center">
+                    <p>Não há nada aqui</p>
+                    </div>
+                    
                     </>
                 )
             }
