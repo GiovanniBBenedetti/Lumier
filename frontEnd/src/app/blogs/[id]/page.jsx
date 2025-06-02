@@ -24,7 +24,7 @@ export default async function DetalhesBlog({ params }) {
             <h1>{data.titulo}</h1>
             <div className="container-imagem">
 
-                <img className="" src={`http://localhost:3200${data.imagem1}`} />
+                <img className="w-100" src={`http://localhost:3200${data.imagem1}`} />
             </div>
             <div className="descricao">
                 <p>{data.conteudo}</p>
