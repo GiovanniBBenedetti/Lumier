@@ -1,5 +1,5 @@
 import express from 'express'
-import { criarBlogController, atualizarBlogController, excluirBlogController, listarBlogController, obterBlogPorIdController} from '../controllers/blogController.js'
+import { criarBlogController, atualizarBlogController, excluirBlogController, listarBlogController, obterBlogPorIdController } from '../controllers/blogController.js'
 import authMiddleware from '../middlewares/authMiddleware.js'
 import multer from 'multer';
 import path from 'path';
@@ -21,8 +21,8 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-router.post('/', authMiddleware,upload.single('imagem1') , criarBlogController )
-router.put('/:id', authMiddleware,upload.single('imagem1') , atualizarBlogController )
+router.post('/', authMiddleware, upload.single('imagem1'), criarBlogController)
+router.put('/:id', authMiddleware, upload.single('imagem1'), atualizarBlogController)
 router.delete('/:id', authMiddleware, excluirBlogController)
 
 
@@ -31,11 +31,11 @@ router.get('/:id', obterBlogPorIdController)
 
 
 router.options('/', (req, res) => {
-    res.setHeader('Allow', 'GET, OPTIONS');
+    res.setHeader('Allow', 'GET, POST, OPTIONS');
     res.status(204).send();
 })
 router.options('/:id', (req, res) => {
-    res.setHeader('Allow', 'GET, OPTIONS');
+    res.setHeader('Allow', 'GET, PUT, DELETE OPTIONS');
     res.status(204).send();
 })
 

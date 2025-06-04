@@ -2,8 +2,9 @@ import express from 'express'
 import blogRotas from './routes/blogRotas.js'
 import authRotas from './routes/authRotas.js'
 import comentariosBlogRotas from './routes/comentarioBlog.js'
-import adminRotas from './routes/adiminRotas.js'
+import adminRotas from './routes/adminRotas.js'
 import usuariosRotas from './routes/usuariosRotas.js'
+import eventosRotas from  './routes/eventoRotas.js'
 import cors from 'cors'
 const app = express()
 const port = 3200;

@@ -24,7 +24,7 @@ const obterBlogPorIdController = async (req, res) => {
         if (blog) {
             res.json(blog)
         } else {
-            res.status(404).json({ mensagem: `blog não encontrado` })
+            res.status(404).json({mensagem: 'Nenhum livro encontrado com esse '})
         }
     } catch (err) {
         console.error('Erro ao obter blog por ID: ', err)
@@ -36,7 +36,8 @@ const obterBlogPorIdController = async (req, res) => {
 
 const criarBlogController = async (req, res) => {
     try {
-        const { titulo, conteudo, autor,} = req.body;
+        const { titulo, conteudo } = req.body;
+        const autor = req.usuario.nome
         let capaPath = null;
         if (req.file) {
             capaPath = req.file.path.replace(__dirname.replace('\\controllers', ''), '');
@@ -68,7 +69,7 @@ const atualizarBlogController = async (req, res) => {
             autor: autor,
             imagem1: imagem1,
             imagem2: imagem2,
-            imagem2:imagem3,
+            imagem2: imagem3,
 
         };
         await atualizarBlog(blogId, blogData);
@@ -91,5 +92,5 @@ const excluirBlogController = async (req, res) => {
 };
 
 export {
-  listarBlogController, obterBlogPorIdController, criarBlogController, atualizarBlogController,excluirBlogController
+    listarBlogController, obterBlogPorIdController, criarBlogController, atualizarBlogController, excluirBlogController
 };
