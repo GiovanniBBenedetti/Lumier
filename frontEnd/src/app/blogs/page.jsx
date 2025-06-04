@@ -26,7 +26,7 @@ export default function Home() {
             <Link href={`blogs/${blog.id}`}>
               <h1>{blog.titulo}</h1>
               <p>
-                {new Date(blog.data_publicacao).toLocaleString("pt-BR")}
+                Publicado em: {new Date(blog.data_publicacao).toLocaleString("pt-BR")}
               </p>
 
             </Link>
