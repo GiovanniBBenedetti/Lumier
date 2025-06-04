@@ -11,8 +11,9 @@ export default function LogoutPage() {
     localStorage.removeItem('token')
     localStorage.removeItem('nome')
     window.location.href = '/';
-  }, [window])
+  }, [])
 
   return (
-    <p>Saindo...</p>)
+    <p>Saindo...</p>
+  )
 }
