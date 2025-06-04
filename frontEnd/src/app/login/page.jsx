@@ -27,6 +27,7 @@ export default function LoginPage() {
       }
 
       localStorage.setItem('token', data.token)
+      localStorage.setItem('nome', data.nome)
 
       if (data.tipo === 'admin') {
         window.location.href = '/admin';

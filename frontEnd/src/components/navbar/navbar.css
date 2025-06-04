@@ -124,12 +124,24 @@
 
 .login-desk a {
   text-decoration: none;
-  margin-left: 20px;
   font-size: 40px;
   color: var(--cor3);
+  margin-left: 30px;
 }
 
 
+.nomeUsuario{
+  color: #cfb556;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nomeUsuario i{
+  font-size: 30px;
+}
+.nomeUsuarioDesk{
+  margin-left: 20px;
+}
 
 
 
