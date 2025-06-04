@@ -24,11 +24,11 @@ const loginController = async (req, res) => {
                 tipo: usuario.tipo 
             },
             JWT_SECRET,
-            { expiresIn: '5m' }
+            { expiresIn: '1h' }
         );
 
 
-        res.json({ mensagem: 'Login realizado com sucesso', token, tipo: usuario.tipo})
+        res.json({ mensagem: 'Login realizado com sucesso', token, tipo: usuario.tipo, nome:usuario.nome})
     } catch (err) {
         console.error('Erro ao fazer login: ', err)
         res.status(500).json({ mensagem: 'Erro ao fazer login' })

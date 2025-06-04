@@ -14,10 +14,10 @@ const authMiddleware = (req, res, next) => {
         const decoded = jwt.verify(token, JWT_SECRET)
         req.usuario = decoded
 
-        
+
         next()
     } catch (err) {
-        return res.status(403).json({ mensagem: 'Não autorizado: Token inválido' })
+        return res.status(401).json({ mensagem: 'Não autorizado: Token inválido' });
     }
 }
 

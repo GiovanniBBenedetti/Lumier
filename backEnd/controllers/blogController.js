@@ -36,7 +36,7 @@ const obterBlogPorIdController = async (req, res) => {
 
 const criarBlogController = async (req, res) => {
     try {
-        const { titulo, conteudo, data_publicacao, autor,} = req.body;
+        const { titulo, conteudo, autor,} = req.body;
         let capaPath = null;
         if (req.file) {
             capaPath = req.file.path.replace(__dirname.replace('\\controllers', ''), '');

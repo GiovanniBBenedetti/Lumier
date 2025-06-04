@@ -2,7 +2,8 @@ import express from 'express'
 import blogRotas from './routes/blogRotas.js'
 import authRotas from './routes/authRotas.js'
 import comentariosBlogRotas from './routes/comentarioBlog.js'
-import adminRoutes from './routes/adiminRotas.js'
+import adminRotas from './routes/adiminRotas.js'
+import usuariosRotas from './routes/usuariosRotas.js'
 import cors from 'cors'
 const app = express()
 const port = 3200;
@@ -15,7 +16,8 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('/auth', authRotas)
 app.use('/blog', blogRotas);
-app.use('/admin', adminRoutes);
+app.use('/admin', adminRotas);
+app.use('/usuario', usuariosRotas )
 app.use("/comentariosBlog", comentariosBlogRotas);
 
 app.get('/', (req,res) =>{
