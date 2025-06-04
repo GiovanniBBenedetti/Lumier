@@ -19,7 +19,7 @@ const atualizarUsario = async (usuarioData, usuario ) => {
     }
 }
 
-const listarUsuarios = async () => {
+const obterUsuarios = async () => {
     try {
         return await readAll('usuarios')
     } catch (err) {
@@ -37,4 +37,4 @@ const listarUsuario = async (usuario) => {
     }
 }
 
-export { criarUsuario, atualizarUsario, listarUsuario, listarUsuarios }
+export { criarUsuario, atualizarUsario, listarUsuario, obterUsuarios }

@@ -1,10 +1,14 @@
 import express from 'express'
-import { listarController, criarBlogController, recusarBlogController} from '../controllers/AdminController.js'
+import { listarController, criarBlogController, recusarBlogController, dashboard} from '../controllers/AdminController.js'
 import { cadastroAdminController } from '../controllers/AuthController.js'
+import auto from '../middlewares/authMiddlewares.js'
+import isAdmin from '../middlewares/adminMiddleware.js'
 import authMiddleware from '../middlewares/authMiddlewares.js'
 const router = express.Router()
 
-router.get('/estudantes', authMiddleware, listarController)
+router.get('/dashboard', auto, isAdmin, dashboard);
+
+router.get('/estudantes', auto, isAdmin, listarController)
 
 router.post('/estudantes', authMiddleware, criarBlogController)
 

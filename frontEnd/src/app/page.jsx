@@ -7,8 +7,6 @@ import styles from "./page.module.css";
 
 export default function Home() {
   const [usuario, setUsuario] = useState('')
-
-
   return (
     <div className="d-flex flex-column">
       <div className="container">

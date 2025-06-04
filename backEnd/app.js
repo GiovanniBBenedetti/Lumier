@@ -11,6 +11,8 @@ app.use(express.json())
 app.use('/auth', authRotas)
 app.use('/comum', comumRotas)
 app.use('/admin', adminRotas)
+app.use(express.urlencoded({ extended: false }));
+app.use("/uploads", express.static('uploads'))
 
 app.get('/', (req, res) => {
     res.status(200).send('HOME')

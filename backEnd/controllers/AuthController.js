@@ -59,30 +59,32 @@ const loginController = async (req, res) => {
     const { email, senha } = req.body
 
     try {
-        const usuario = await read('usuarios', `email = '${email}'`)
-        let data = null
-        usuario.forEach(element => {
-            data = element
-        })
-
+        const usuario = await read('usuarios', `email= '${email}'`)
         if (!usuario) {
-            return res.status(404).json({ menssagem: "Usuário não encontrado" })
+            return res.status(404).json({ mensagem: 'Usuário não encontrado' })
         }
 
         const senhaCorreta = await compare(senha, usuario[0].senha)
 
         if (!senhaCorreta) {
-            return res.status(401).json({ menssagem: "senha incorreta" })
+            return res.status(401).json({ mensagem: 'Senha Incorreta' })
         }
-
-        const token = jwt.sign(data, JWT_SECRET, { expiresIn: '1h' })
-
-        res.json({ menssagem: 'Login realizado com sucesso ', token })
+        const token = jwt.sign(
+            {
+                id: usuario[0].id,
+                email: usuario[0].email,
+                nome: usuario[0].nome,
+                tipo: usuario[0].tipo 
+            },
+            JWT_SECRET,
+            { expiresIn: '1h' }
+        );
+        res.json({ mensagem: 'Login realizado com sucesso', token, tipo: usuario[0].tipo, nome:usuario[0].nome})
+    } catch (err) {
+        console.error('Erro ao fazer login: ', err)
+        res.status(500).json({ mensagem: 'Erro ao fazer login' })
     }
-    catch (err) {
-        console.error('Erro entrando na conta: ', err)
-        res.status(500).json({ menssagem: "Erro ao fazer login" })
-    }
+
 }
 
 const cadastroController = async (req, res) => {

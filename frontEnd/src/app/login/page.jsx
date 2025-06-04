@@ -8,15 +8,34 @@ export default function Home() {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const handleLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
+
     try {
-      const res = await axios.post('http://localhost:3000/auth/login', { email, senha });
-      localStorage.setItem('token', res.data.token)
-      console.log(res.data.token)
-      alert('Sucesso no login')
+      const res = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, senha })
+      })
+      
+      const data = await res.json()
+
+      if (!res.ok) {
+        alert(data.error || 'Erro ao fazer login')
+        return
+      }
+      localStorage.setItem('token', data.token)
+      localStorage.setItem('nome', data.nome)
+
+      console.log(data)
+      if (data.tipo === 'admin') {
+        window.location.href = '/admin';
+      } else {
+        window.location.href = '/comum';
+      }
+
     } catch (err) {
-      alert('Login falhou, senha ou email estão incorretos ');
-      console.log(err)
+      console.error('Erro no login:', err)
+      alert('Erro ao conectar com o servidor')
     }
   }
 

@@ -4,12 +4,8 @@ import { criarBlog } from "../models/Noticia.js"
 const listarController = async (req, res) => {
     try {
         const usuarios = await listarEBlog('noticiaEstudante')
-        if (req.tipo != 'admin') {
-            return res.status(403).json({ mensagem: 'Não autorizado' })
-        }
-        else {
-            return res.status(200).json(usuarios)
-        }
+        console.log(usuarios)
+        return res.status(200).json(usuarios)
     }
     catch (err) {
         console.error('Erro listando sugestões: ', err)
@@ -26,8 +22,6 @@ const criarBlogController = async (req, res) => {
             data_publicacao: new Date(),
             autor: noticia.item.autor,
             imagem1: noticia.item.imagem1,
-            imagem2: noticia.item.imagem2,
-            imagem3: noticia.item.imagem3,
         }
         const blogEData = {
             titulo: noticia.item.titulo,
@@ -35,8 +29,6 @@ const criarBlogController = async (req, res) => {
             data_publicacao: new Date(),
             autor: noticia.item.autor,
             imagem1: noticia.item.imagem1,
-            imagem2: noticia.item.imagem2,
-            imagem3: noticia.item.imagem3,
             autorizacao: 'aceito',
         }
         const blogId = await criarBlog(blogData)
@@ -57,8 +49,6 @@ const recusarBlogController = async (req, res) => {
             data_publicacao: new Date(),
             autor: noticia.item.autor,
             imagem1: noticia.item.imagem1,
-            imagem2: noticia.item.imagem2,
-            imagem3: noticia.item.imagem3,
             autorizacao: 'Recusado',
         }
         const blogUpd = await atualizarEBlog(noticia.item.id, blogEData)
@@ -71,4 +61,8 @@ const recusarBlogController = async (req, res) => {
     }
 }
 
-export { listarController, criarBlogController, recusarBlogController }
+const dashboard = (req, res) => {
+    res.json({ mensagem: `Bem-vindo ao painel admin, ${req.usuario.nome}` });
+};
+
+export { listarController, criarBlogController, recusarBlogController, dashboard }

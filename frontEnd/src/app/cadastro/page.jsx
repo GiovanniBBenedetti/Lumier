@@ -4,9 +4,6 @@ import axios from "axios";
 import Link from 'next/link';
 import Image from "next/image";
 export default function Home() {
-     useEffect(() => {
-        axios.get(`http://localhost:3000/auth/${email}`)
-    }, [])
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
