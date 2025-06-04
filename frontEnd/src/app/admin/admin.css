@@ -1,0 +1,9 @@
+.formAdicionar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#conteudo{
+    height: 400px;
+}

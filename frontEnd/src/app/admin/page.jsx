@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
+import './admin.css'
 
 export default function AdminPage() {
   const [authorized, setAuthorized] = useState(null);
@@ -7,7 +8,7 @@ export default function AdminPage() {
   const [titulo, setTitulo] = useState('');
   const [conteudo, setConteudo] = useState('');
   const [imagem1, setImagem1] = useState(null);
-  const [autor, setAutor] = useState('');
+
   const [token, setToken] = useState(null);
 
   useEffect(() => {
@@ -18,17 +19,20 @@ export default function AdminPage() {
       headers: { Authorization: `Bearer ${t}` }
     })
       .then(async (res) => {
-        if (res.status === 403 || res.status === 401) {
+        if (res.status === 403 ) {
           window.location.href = '/login';
-        } else {
+
+        } else if(res.status === 401){
+          window.location.href = '/login';
+
+          localStorage.removeItem('token')
+          localStorage.removeItem('nome')
+        }else{
           const data = await res.json();
           setAuthorized(true);
           setMensagem(data.mensagem);
         }
       })
-      .catch(() => {
-        window.location.href = '/login';
-      });
   }, []);
 
   const handleAdicionar = async (e) => {
@@ -43,7 +47,6 @@ export default function AdminPage() {
       const formData = new FormData();
       formData.append('titulo', titulo);
       formData.append('conteudo', conteudo);
-      formData.append('autor', autor);
       if (imagem1) formData.append('imagem1', imagem1);
 
       const response = await fetch('http://localhost:3200/blog', {
@@ -64,7 +67,6 @@ export default function AdminPage() {
 
       setTitulo('');
       setConteudo('');
-      setAutor('');
       setImagem1(null);
     } catch (err) {
       alert('Erro ao adicionar publicação: ' + err.message);
@@ -75,7 +77,7 @@ export default function AdminPage() {
 
   return (
     <>
-      <div className='container vh-100'>
+      <div className='container'>
 
 
         <div>
@@ -83,15 +85,12 @@ export default function AdminPage() {
           <p>{mensagem}</p>
         </div>
 
-        <form id="blogForm" onSubmit={handleAdicionar} encType="multipart/form-data">
+        <form id="blogForm" className='formAdicionar' onSubmit={handleAdicionar} encType="multipart/form-data">
           <label htmlFor="titulo">Título:</label>
           <input type="text" id="titulo" name="titulo" value={titulo} onChange={e => setTitulo(e.target.value)} />
 
           <label htmlFor="conteudo">Conteúdo:</label>
-          <input type="text" id="conteudo" name="conteudo" value={conteudo} onChange={e => setConteudo(e.target.value)} />
-
-          <label htmlFor="autor">Autor:</label>
-          <input type="text" id="autor" name="autor" value={autor} onChange={e => setAutor(e.target.value)} />
+          <textarea id="conteudo" cols="30" rows="5" name="conteudo" value={conteudo} onChange={e => setConteudo(e.target.value)} />
 
           <label htmlFor="imagem1">Imagem:</label>
           <input
