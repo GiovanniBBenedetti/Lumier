@@ -33,6 +33,7 @@
 
 .navbar-nav {
   white-space: nowrap;
+
 }
 
 
@@ -126,7 +127,7 @@
   text-decoration: none;
   font-size: 40px;
   color: var(--cor3);
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 
@@ -142,16 +143,6 @@
 .nomeUsuarioDesk{
   margin-left: 20px;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
