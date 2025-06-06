@@ -18,7 +18,7 @@ export default async function DetalhesBlog({ params }) {
     const response = await fetch(`http://localhost:3200/blog/${id}`);
     const data = await response.json()
 
-    console.log(data)
+    
     const commentsRes = await fetch(`http://localhost:3200/comentariosBlog/${id}`);
     const comments = await commentsRes.json();
 

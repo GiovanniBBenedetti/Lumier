@@ -16,3 +16,20 @@
     border: none;
     border-radius: 30px
 }
+
+.cardEventos{
+    padding: 30px;
+    border-radius: 40px;
+    background-color: var(--cor4);
+    color: var(--cor1);
+}
+.cardEventos h3{
+    color: var(--cor3);
+}
+
+
+
+
+.container-iconeEvento img{
+width: 70px;
+}

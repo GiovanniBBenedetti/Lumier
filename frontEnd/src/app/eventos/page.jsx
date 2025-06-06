@@ -8,15 +8,7 @@ export default function HomePage() {
   const [date, setDate] = useState(new Date())
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Escolha uma data:</h1>
-      <Calendar
-        onChange={setDate}
-        value={date}
-      />
-      <p style={{ marginTop: '1rem' }}>
-        Data selecionada: {date.toLocaleDateString('pt-BR')}
-      </p>
-    </div>
+    <>
+    </>
   )
 }
