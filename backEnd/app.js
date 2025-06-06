@@ -20,6 +20,7 @@ app.use('/blog', blogRotas);
 app.use('/admin', adminRotas);
 app.use('/usuario', usuariosRotas )
 app.use("/comentariosBlog", comentariosBlogRotas);
+app.use("/eventos", eventosRotas)
 
 app.get('/', (req,res) =>{
     res.status(200).json({mensagem: 'Bem vindo a Api Restful da Lumier'})
