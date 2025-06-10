@@ -1,0 +1,79 @@
+.fale-conosco-section {
+  background-color: var(--cor3);
+  color: #5b2164;
+}
+
+.titulo {
+  font-size: 3.3rem;
+  font-weight: bold;
+  border-left: 15px solid var(--cor1) ;
+  height: 120px;
+  display: flex;
+  align-items: center;
+padding-left: 30px;
+border-radius: 0px 0px 0px 09px;
+ font-family: 'Sugo Pro Display Trial', sans-serif;
+}
+
+.titulo span {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #5b2164;
+  margin-right: 10px;
+}
+
+.subtitulo {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.contatos .icone {
+  background-color: #5b2164;
+  color: white;
+  font-size: 1.5rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contatos p {
+  font-size: 0.9rem;
+}
+
+.accordion-button {
+  background-color: white;
+  color: #5b2164;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e6d7f5;
+}
+
+.accordion-body {
+  color: #333;
+  background-color: #fefefe;
+  border-radius: 0 0 15px 15px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+  }
+
+  .contatos {
+    flex-direction: column;
+  }
+}

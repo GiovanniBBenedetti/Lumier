@@ -1,0 +1,202 @@
+/* paleta de cores */
+:root {
+    --colorUm: #67295C;
+    --colorDois: #CFB556;
+    --colorTres: #DCCAF4;
+    --colorQuatro: #B08DDF;
+    --colorCinco: #E6E4CD;
+    --colorSeis: #DDD1A4;
+}
+
+/* container do banner */
+.bannerUmHome {
+    background-image: url("/backgroundUm.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 8% 5% 3% 5%;
+    display: flex;
+}
+
+/* títulos  */
+h1.tituloBannerUmHome {
+    color: var(--colorQuatro);
+    font-size: clamp(2.5rem, 7vw, 7rem);
+   
+}
+
+h2.tituloBannerUmHome {
+    color: var(--colorDois);
+    font-size: clamp(2rem, 5vw, 6rem);
+    font-family: 'Sugo Pro Display Trial', sans-serif;
+    font-weight: normal;
+}
+
+/* botões */
+.botoesBannerHomeUm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.botaoIntroHome {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.botaoIntroHome:hover {
+    transform: scale(1.05);
+}
+
+.botaoIntroHome button {
+    background-color: #f0ebd8;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.75rem, 1.2vw, 1.1rem);
+    color:#67295C;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.botaoIntroHome:hover button {
+    background-color: var(--colorTres);
+}
+.botaoIntroHome a{
+    text-decoration: none;
+}
+/* seta */
+.setaHome {
+    width: clamp(1rem, 2vw, 1.5rem);
+    height: auto;
+    transition: transform 0.3s;
+}
+
+/* responsividade padrão até 770px */
+@media (min-width: 635px) and (max-width: 785px) {
+    .bannerUmHome {
+        background-size: cover;
+        background-position: center;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 10% 5% 3% 5%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .botoesBannerHomeUm {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+
+    .botao {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .botao button {
+        width: auto;
+        max-width: 300px;
+        font-size: clamp(0.65rem, 1.2vw, 0.95rem);
+        padding: 8px 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+    }
+
+    .setaHome {
+        width: clamp(0.8rem, 1.8vw, 1.2rem);
+        height: auto;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 635px) {
+    .bannerUmHome {
+        background-image: url("/backgroundDois.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10% 5%;
+        width: 100%;
+        height: auto;
+    }
+
+    .tituloBannerUmHome {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .botoesBannerHomeUm {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .botao {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .botao button {
+        width: 80%;
+        max-width: 200px;
+        font-size: clamp(0.55rem, 2vw, 0.75rem);
+        padding: clamp(6px, 1vw, 8px) clamp(8px, 3vw, 12px);
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 2% 0%;
+    }
+
+    h1.tituloBannerUmHome {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+    }
+
+    h2.tituloBannerUmHome {
+        font-size: clamp(1.2rem, 5vw, 1.6rem);
+    }
+
+    .setaHome {
+        width: clamp(0.6rem, 3vw, 1rem);
+        height: auto;
+    }
+}

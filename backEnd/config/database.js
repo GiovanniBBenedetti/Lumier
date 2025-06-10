@@ -32,15 +32,19 @@ async function executeQuery(sql, params = []) {
 
 
 
-//Função para ler todos os registros
-async function readAll(table, where = null) {
+// Função para ler todos os registros ordenados por data (mais recente primeiro)
+async function readAll(table, where = null, orderBy = 'data DESC') {
     const connection = await getConnection();
     try {
         let sql = `SELECT * FROM ${table}`;
+        
         if (where) {
-            sql += ` WHERE ${where}`
+            sql += ` WHERE ${where}`;
         }
-
+        
+        // Adiciona ordenação por data (substitua 'data' pelo nome correto da sua coluna)
+        sql += ` ORDER BY ${orderBy}`;
+        
         const [rows] = await connection.execute(sql);
         return rows;
     } catch (err) {
@@ -49,7 +53,6 @@ async function readAll(table, where = null) {
     } finally {
         connection.release();
     }
-
 }
 
 //Função para ler  um registro específico
@@ -63,6 +66,22 @@ async function read(table, where) {
 
         const [rows] = await connection.execute(sql);
         return rows[0] || null;
+    } catch (err) {
+        console.error('Erro ao ler registros: ', err);
+        throw err;
+    } finally {
+        connection.release();
+    }
+}
+async function readMore(table, where) {
+    const connection = await getConnection();
+    try {
+        let sql = `SELECT * FROM ${table}`;
+        if (where) {
+            sql += ` WHERE ${where}`;
+        }
+        const [rows] = await connection.execute(sql);
+        return rows || null;
     } catch (err) {
         console.error('Erro ao ler registros: ', err);
         throw err;
@@ -143,4 +162,4 @@ async function compare(senha, hash){
     }
 }
 
-export { create, readAll, read, update, deleteRecord, compare, executeQuery }
+export { create, readAll, read, update, deleteRecord, compare, executeQuery,readMore }

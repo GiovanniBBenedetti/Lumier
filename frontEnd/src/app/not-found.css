@@ -1,0 +1,106 @@
+/* paleta de cores */
+:root {
+    --colorUm: #67295C;
+    --colorDois: #CFB556;
+    --colorTres: #DCCAF4;
+    --colorQuatro: #B08DDF;
+    --colorCinco: #E6E4CD;
+    --colorSeis: #DDD1A4;
+}
+ 
+/* div not-found*/
+.divNotFound {
+    background-image: url("/backgroundTres.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 6% 0%;
+}
+ 
+/* estilização da imagem not-found */
+.notFoundImg {
+    display: flex;
+    justify-content: center;
+}
+ 
+.notFoundImg img {
+    max-width: 40%;
+}
+ 
+/* estilização do texto do lnot-found */
+.notFoundTexto {
+    text-align: center;
+    margin: 3%;
+    margin-bottom: 0 !important;
+}
+ 
+.notFoundTexto h1 {
+    color: #CFB556;
+    font-size: clamp(0.9rem, 3.5vw, 10rem);
+}
+ 
+.notFoundTexto p {
+    color: #DCCAF4;
+    font-size: clamp(0.5rem, 1.1vw, 9.6rem);
+    padding: 0;
+    margin: 0;
+}
+ 
+/* estilização do botão not-found */
+.botaoNotFound {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    cursor: pointer;
+    width: fit-content;
+    margin: 2%;
+    margin-bottom: 0 !important;
+}
+.botaoNotFound a {
+    text-decoration: none;
+}
+ 
+.botaoNotFound:hover {
+    transform: scale(1.05);
+}
+ 
+.botaoNotFound button {
+    background-color: #f0ebd8;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: clamp(0.4rem, 1.2vw, 1.1rem);
+    color: #67295C;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+ 
+.botaoNotFound:hover button {
+    background-color: var(--colorTres);
+}
+ 
+/* estilização seta not-found */
+.setaNotFound {
+    width: clamp(0.6rem, 2vw, 1.5rem);
+    height: auto;
+    transition: transform 0.3s;
+}
+ 
+/* responsividade not-found */
+@media (max-width: 635px) {
+    .botaoNotFound {
+        gap: 5px;
+        margin: 4%;
+    }
+ 
+    .botaoNotFound button {
+        padding: 10% 20%;
+    }
+}

@@ -1,35 +1,11 @@
-.btn-selecionado {
-
-    background-color: var(--cor6);
-    color: var(--cor4);
-    padding: 5px 20px 5px 20px;
-    width: 100%;
-    border: none;
-    border-radius: 30px
+.part2 {
+  height: 800px;
+  background-color: var(--cor4);
 }
 
-.btn-mes {
-    background-color: var(--cor3);
-    color: var(--cor4);
-    padding: 5px 20px 5px 20px;
-    width: 100%;
-    border: none;
-    border-radius: 30px
+.sobre-nos-section {
+  background-color: var(--cor1);
+  color: var(--cor4);
+  height: 700px;
 }
 
-.cardEventos{
-    padding: 30px;
-    border-radius: 40px;
-    background-color: var(--cor4);
-    color: var(--cor1);
-}
-.cardEventos h3{
-    color: var(--cor3);
-}
-
-
-
-
-.container-iconeEvento img{
-width: 70px;
-}

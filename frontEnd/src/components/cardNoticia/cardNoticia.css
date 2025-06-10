@@ -1,0 +1,97 @@
+
+.descricao{
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-card {
+  background-color: var(--cor4);
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+height: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.custom-card .titulo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #dfcbf1;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.custom-card .img-container {
+
+  padding: 4px;
+  margin-bottom: 15px;
+
+  
+
+}
+.custom-card .img-container img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+
+}
+
+.custom-card .descricao {
+  font-size: 0.95rem;
+  color: var(--cor3);
+  margin-bottom: 15px;
+}
+
+.custom-card .data-publicacao {
+  font-weight: bold;
+  color: var(--cor6);
+  text-transform: uppercase;
+}
+
+
+.custom-card .btn-saiba-mais {
+  background-color: #fff;
+  color: #5e287d;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  align-self: flex-end;
+  transition: all 0.3s;
+}
+
+.custom-card .btn-saiba-mais:hover {
+  background-color: #f1d8ff;
+}
+.footerCard{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}

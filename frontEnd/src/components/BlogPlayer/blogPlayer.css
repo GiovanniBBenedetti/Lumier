@@ -1,0 +1,14 @@
+.audio-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--cor6);
+}
+
+.audio-player-wrapper audio {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+.audio-player-wrapper label {
+  font-size: 0.9rem;
+}

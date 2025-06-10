@@ -1,7 +1,7 @@
 import './tour.css';
 import { Poppins } from 'next/font/google';
 import SliderCategorias from '@/components/sliderSwitter/page';
-
+import DiferenciaisEscola from '@/components/diferenciais/diferenciais';
 const poppins = Poppins({
   subsets: ['latin'],
   weight: '700',
@@ -11,7 +11,12 @@ const poppins = Poppins({
 export default function Tour() {
     return (
         <>
-
+    <style>
+      {`
+body{
+  background-color: var(--cor4)!important;
+}`}
+    </style>
 
             <div className="bannerTour">
                 <img src="/bannerTour.png" alt="Banner" />
@@ -22,9 +27,13 @@ export default function Tour() {
 
 
             </div>
-            <div className=''>
+            <div className='categoriasTour'>
     <SliderCategorias></SliderCategorias>
 </div>
+
+
+
+    <DiferenciaisEscola></DiferenciaisEscola>
 
 
 

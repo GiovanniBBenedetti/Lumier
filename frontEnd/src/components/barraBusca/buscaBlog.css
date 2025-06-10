@@ -1,0 +1,46 @@
+
+
+.container-input {
+  position: relative;
+  width: 100%;
+
+}
+
+.input {
+  width: 100%;
+  padding: 10px 0px 10px 40px;
+  border-radius: 7px;
+  border: solid 3px var(--cor5);
+  background-color: var(--cor4);
+  color: var(--cor3);
+  outline: none;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--cor3);
+  opacity: 1;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+  fill: var(--cor3);
+
+}
+
+
+@media (max-width: 990px) {
+  .input {
+    width: 100%;
+  }
+}
+
+@media (min-width: 989px) {
+  .container-input {
+    max-width: 500px;
+  }
+}

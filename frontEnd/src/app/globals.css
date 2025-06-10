@@ -6,7 +6,7 @@
   --cor3: #cfb556;
   --cor4: #67295c;
   --cor5: #b08ddf;
-  --cor6: #dccaf4;
+  --cor6: #d7bef5;
 }
 
 
@@ -19,6 +19,6 @@ body {
 
 body {
   color: var(--cor4)!important;
-  background-color: var(--cor1)!important;
+  background-color: var(--cor4)!important;
 
 }

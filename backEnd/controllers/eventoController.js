@@ -31,13 +31,13 @@ const obterEventoPorIdController = async (req, res) => {
 
 const criarEventoController = async (req, res) => {
     try {
-        const { evento, data_evento, descricao } = req.body;
+        const { evento, data_evento, descricao, tipo } = req.body;
 
         const eventoData = {
             evento: evento,
             data_evento: data_evento,
-            decricao: descricao
-
+            descricao: descricao,
+            tipo: tipo
         };
         const eventoId  = await criarEvento(eventoData);
         res.status(201).json({ mensagem: 'evento criado com sucesso', eventoId });
@@ -51,11 +51,12 @@ const criarEventoController = async (req, res) => {
 const atualizarEventoController = async (req, res) => {
     try {
         const eventoId = req.params.id;
-        const { evento, data_evento, descricao } = req.body;
+        const { evento, data_evento, descricao,tipo } = req.body;
         const eventoData = {
             evento: evento,
             data_evento: data_evento,
-            decricao: descricao
+            decricao: descricao,
+            tipo:tipo
 
         };
         await atualizarBlog(eventoId, eventoData);

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Loading from '@/components/loader/loader';
 
 export default function Usuario() {
     const [usuario, setUsuario] = useState(null);
@@ -29,7 +30,7 @@ export default function Usuario() {
                 const dados = await resposta.json();
                 setUsuario(dados);
                 console.log(resposta)
-                
+
             } catch (err) {
                 setErro(err.message);
             } finally {
@@ -41,7 +42,7 @@ export default function Usuario() {
     }, []);
 
     if (carregando) {
-        return <div className="container mt-5">Carregando informações do usuário...</div>;
+        return <Loading></Loading>
     }
 
     if (erro) {
@@ -49,7 +50,7 @@ export default function Usuario() {
     }
 
     return (
-        <div className="container mt-5">
+        <>   <div className="container mt-5">
             <h2>Informações do Usuário</h2>
             <div className="card p-4 shadow-sm mt-3" style={{ maxWidth: '500px' }}>
                 {usuario.fotoPerfil && (
@@ -64,6 +65,6 @@ export default function Usuario() {
                 <p>Email: {usuario.email}</p>
                 <p>Tipo: {usuario.tipo}</p>
             </div>
-        </div>
+        </div></>
     );
 }

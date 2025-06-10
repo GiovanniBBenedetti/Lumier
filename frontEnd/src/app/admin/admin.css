@@ -1,9 +1,37 @@
-.formAdicionar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    .formAdicionar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-#conteudo{
-    height: 400px;
-}
+    #conteudo{
+        height: 400px;
+    }
+
+    .admin-card{
+        background-color: var(--cor1);
+        
+    }
+    .admin-card h4{
+        color: var(--cor5);
+    }
+
+    .tituloPainel{
+        color: var(--cor3);
+        border-left: 15px solid var(--cor3);
+        padding-left: 20px;
+        font-size: 90px;
+        max-width: 900px;
+        border-radius: 0px 0px 0px 09px;
+    }
+    .labelAdm{
+         color: var(--cor5);
+        font-family: 'poppins';
+    }
+
+    .btnAdm{
+        background-color: var(--cor6);
+        border: none;
+        color: white;
+        padding: 10px 40px 10px 40px;
+    }

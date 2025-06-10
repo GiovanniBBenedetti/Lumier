@@ -3,7 +3,8 @@ import { read, readAll, create, update, deleteRecord } from "../config/database.
 
 const listarEventos = async () => {
     try {
-        return await readAll('eventos')
+
+        return await readAll('eventos', null, 'data_evento ASC')
     } catch (err) {
         console.error('Erro ao listar eventos: ', err)
         throw err

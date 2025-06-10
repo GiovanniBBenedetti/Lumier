@@ -1,3 +1,103 @@
-.loginContainer{
-    height: 100vh;
+
+.login {
+  width: 100%;
+  height: 100vh;
+  background-image: url('/login.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: -170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cor1);
+  border-radius: 30px;
+  padding: 40px 30px;
+  max-width: 700px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-top: 100px;
+  text-align: center;
+}
+
+.login-titulo h1 {
+    font-family: 'Sugo Pro Display Trial', sans-serif;
+    color: #67295c;
+    font-size: 60px;
+    margin: 0;
+}
+
+.login-link-cadastro a {
+    color: #937300;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.login-informacoes {
+    width: 100%;
+}
+
+.login-caixa-input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.login-label {
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: #67295c;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.login-caixa-input input {
+    width: 100%;
+    padding: 25px 16px 10px 16px; 
+    font-size: 14px;
+    border: 3px solid #937300;
+    border-radius: 25px;
+    background-color: rgba(206, 180, 86, 0.7);
+    outline: none;
+    font-family: "Poppins", sans-serif;
+}
+
+.login-link-senha {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 17px;
+    font-weight: 600;
+    color: #67295c;
+    margin-bottom: 20px;
+}
+
+.login-botao {
+    display: flex;
+    justify-content: center;
+}
+
+.login-botao button {
+    background-color: #67295c;
+    width: 100%;
+    color: #d0b3f4;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 40px;
+    font-size: 17px;
+    cursor: pointer;
 }

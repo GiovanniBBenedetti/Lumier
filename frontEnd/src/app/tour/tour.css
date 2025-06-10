@@ -12,3 +12,7 @@
     height: auto;
     display: block;
 }
+.categoriasTour{
+    background-color: var(--cor1);
+    padding: 60px;
+}

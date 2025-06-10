@@ -2,15 +2,15 @@ import { criarComentario, listarComentarioPorId  } from "../models/ComentariosBl
 
 
 export const criarComentarioController  = async (req, res) => {
-  const { post_id, content } = req.body;
+  const { post_id, comentario } = req.body;
   const user_id = req.usuario.id;
 
-  if (!post_id || !content) {
+  if (!post_id || !comentario) {
     return res.status(400).json({ message: "Post ID e conteúdo são obrigatórios." });
   }
   
   try {
-    await criarComentario({ post_id, user_id, content });
+    await criarComentario({ post_id, user_id, comentario });
     res.status(201).json({ message: "Comentário criado com sucesso." });
   } catch (error) {
     console.error("Erro ao criar comentário:", error);

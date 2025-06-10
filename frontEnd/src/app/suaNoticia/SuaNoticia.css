@@ -1,0 +1,88 @@
+.noticia-bg {
+  background-color: var(--cor4);
+  padding: 2rem 1rem;
+}
+
+.tituloRecomendação {
+  color: var(--cor3);
+}
+
+.tituloRecomendação button {
+  font-size: 15px;
+  border: none;
+  background-color: var(--cor6);
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px 25px;
+}
+
+.bg-form {
+  background-color: #F8F0FF;
+  border-radius: 16px;
+}
+
+/* Formulário */
+.formRecomendaNoticia {
+  color: var(--cor3);
+}
+
+.formRecomendaNoticia input,
+.formRecomendaNoticia select,
+.formRecomendaNoticia textarea {
+  background-color: var(--cor1);
+  color: var(--cor4);
+  border: 1px solid var(--cor4);
+}
+
+.formRecomendaNoticia input:focus,
+.formRecomendaNoticia select:focus,
+.formRecomendaNoticia textarea:focus {
+  outline: none;
+  box-shadow: none !important;
+  border-color: var(--cor6);
+  background-color: var(--cor1) !important;
+}
+
+.formRecomendaNoticia input::placeholder,
+.formRecomendaNoticia textarea::placeholder {
+  color: var(--cor4);
+  opacity: 0.8;
+}
+
+.formRecomendaNoticia small {
+  color: var(--cor3);
+}
+
+.btn-eviarRecomendacao {
+  border: none;
+  padding: 10px 5px;
+  border-radius: 10px;
+  background-color: var(--cor6);
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

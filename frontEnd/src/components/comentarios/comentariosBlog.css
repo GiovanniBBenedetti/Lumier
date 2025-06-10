@@ -1,0 +1,65 @@
+.blog-comentarios {
+  border-radius: 16px;
+}
+
+.blog-comentarios h4 {
+  font-weight: 600;
+}
+
+.comentario-textarea {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+  
+.comentario-textarea:focus {
+  border-color: var(--cor6);
+  box-shadow: none;
+  background-color: #fff;
+  outline: none;
+}
+
+.btn-comentar {
+  background-color: var(--cor4);
+  color: white;
+  border: none;
+  padding: 10px 36px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+
+
+.alert-info {
+  font-size: 0.95rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.lista-comentarios {
+  margin-top: 20px;
+}
+
+.comentario-item {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.avatar-comentario {
+  width: 40px;
+  height: 40px;
+  background-color: var(--cor3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--cor1);
+}

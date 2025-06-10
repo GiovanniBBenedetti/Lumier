@@ -3,11 +3,9 @@
 import { useState } from 'react'
 import './login.css'
 
-
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
- 
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -30,11 +28,10 @@ export default function LoginPage() {
       localStorage.setItem('nome', data.nome)
 
       if (data.tipo === 'admin') {
-        window.location.href = '/admin';
+        window.location.href = '/admin'
       } else {
-        window.location.href = '/';
+        window.location.href = '/'
       }
-
     } catch (err) {
       console.error('Erro no login:', err)
       alert('Erro ao conectar com o servidor')
@@ -42,23 +39,51 @@ export default function LoginPage() {
   }
 
   return (
-    <form className='loginContainer' onSubmit={handleLogin}>
-      <h2>Login</h2>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Senha"
-        value={senha}
-        onChange={e => setSenha(e.target.value)}
-        required
-      />
-      <button type="submit">Entrar</button>
-    </form>
+    <>
+        <style>
+          {`
+    body{
+      background-color: var(--cor1)!important;
+    }`}
+        </style>
+   
+    <div className='login'>
+      <div className='login-container'>
+        <div className='login-titulo'>
+          <h1>SEJA BEM VINDO!</h1>
+        </div>
+
+        <div className='login-link-cadastro'>
+          <a href="/Cadastro">Não tem uma conta? Cadastre-se</a>
+        </div>
+
+        <form className='login-informacoes' onSubmit={handleLogin}>
+          <div className='login-caixa-input'>
+            <span className='login-label'>Email</span>
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className='login-caixa-input'>
+            <span className='login-label'>Senha</span>
+            <input
+              type="password"
+              value={senha}
+              onChange={e => setSenha(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className='login-botao'>
+            <button type="submit">Entrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+     </>
   )
 }

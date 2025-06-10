@@ -1,0 +1,21 @@
+ 
+
+.divLoadingBooks {
+  background-color: var(--cor1) !important;
+  padding-bottom: 5%;
+}
+
+.loadingTexto {
+  text-align: center;
+}
+ 
+.loadingTexto h1 {
+  color: #CFB556;
+  font-size: clamp(0.9rem, 3.5vw, 10rem);
+}
+ 
+.loadingTexto p {
+  color: #67295C;
+  font-size: clamp(0.5rem, 1.1vw, 9.6rem);
+}
+

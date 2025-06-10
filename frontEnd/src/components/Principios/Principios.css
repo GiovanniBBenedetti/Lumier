@@ -1,0 +1,65 @@
+.principios-section {
+  background-color: var(--cor3);
+  color: #5b2164;
+  padding: 60px 20px;
+}
+
+.tituloPrincipios {
+  color: #5b2164;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-left: var(--cor4) 10px solid;
+  padding-left: 20px;
+  max-width: 500px;
+  border-radius: 0px 0px 0px 09px;
+}
+
+
+
+.seloPrincipios {
+  background-color: var(--cor6);
+  color: var(--cor1);
+  font-weight: bold;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+
+.icone-circulo img {
+  width: 60%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+.rotulo {
+  background-color: var(--cor6);
+  color: var(--cor1);
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.descricao {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .tituloPrincipios {
+    font-size: 1.8rem;
+  }
+
+  .rotulo {
+    font-size: 1.3rem;
+  }
+
+  .descricao {
+    font-size: 0.85rem;
+  }
+}
