@@ -50,7 +50,7 @@ body{
             </style>
 
             <div className='bannerNoticias container mb-5'>
-                <img src="https://placehold.co/1920x1000" className="w-100" alt="" />
+                <img src="/tecnologiaCategoria.png" className="w-100" alt="" />
             </div>
 
 

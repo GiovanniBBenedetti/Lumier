@@ -85,7 +85,6 @@ export default function Navbar() {
     </ul>
   </li>
   <li className="nav-item"><Link className='nav-link' href='/sobreNos'>Sobre Nós</Link></li>
-  <li className="nav-item"><Link className='nav-link' href='/tour'>Tour</Link></li>
   <li className="nav-item"><Link className='nav-link' href='/suaNoticia'>Sua Notícia</Link></li>
 </ul>
 

@@ -1,0 +1,99 @@
+/* paleta de cores */
+:root {
+    --colorUm: #67295C;
+    --colorDois: #CFB556;
+    --colorTres: #DCCAF4;
+    --colorQuatro: #B08DDF;
+    --colorCinco: #E6E4CD;
+    --colorSeis: #DDD1A4;
+}
+
+.cardSwiperCategorias {
+    width: 100%;
+    border-radius: 25px;
+    height: 100%;
+    background-color: #67295C;
+    max-width: 300px;
+}
+
+.centralizar {
+    align-items: center;
+    padding: 10% 8% 10% 8%;
+}
+
+.cardSwiperCategorias {
+    height: 100%;
+    justify-content: center;
+}
+
+.cardSwiperCategorias .col-md-10 {
+    height: 100%;
+}
+
+.cardBodyCategorias {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 !important;
+    padding-left: 8% !important;
+}
+
+.botaoCategoriasCard {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    justify-content: end !important;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.botaoCategoriasCard button {
+    background-color: #E6E4CD;
+    border: none;
+    border-radius: 40px;
+    font-size: clamp(0.78rem, 0.9vw, 1.1rem);
+    color: var(--colorDois);
+    padding: 0.6em 1.5em;
+    white-space: nowrap;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.botaoCategoriasCard:hover {
+    transform: scale(1.05);
+}
+
+.botaoCategoriasCard:hover button {
+    background-color: #c6b0e2;
+    color: #67295C
+}
+
+.infosImg p {
+    font-size: clamp(0.7rem, 0.9vw, 1.1rem);
+    color: #CFB556;
+    padding: 10% 0% !important;
+}
+
+.Swiper.swiperTour {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.swiperTour .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    margin: 0 4px;
+    transition: background-color 0.3s ease;
+    background-color: #67295c74;
+}
+
+.swiperTour .swiper-pagination-bullet-active {
+    background-color: #67295C !important;
+}

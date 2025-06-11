@@ -1,4 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/sugo-pro-classic-trial');
+@import url("https://use.typekit.net/nhw8ncg.css");
+@import url("https://fonts.cdnfonts.com/css/sugo-pro-classic-trial");
+@import url("https://db.onlinewebfonts.com/c/eccf30d3af8a69bf0b97f01c6d46b8e2?family=Agrandir+Grand+Heavy");
 
 :root {
   --cor1: #e6e4cd;
@@ -11,13 +14,97 @@
 
 
 
-html,
-body {
-  max-width: 100vw;
-
+:root {
+  --colorUm: #67295C;
+  --colorDois: #CFB556;
+  --colorTres: #DCCAF4;
+  --colorQuatro: #B08DDF;
+  --colorCinco: #E6E4CD;
+  --colorSeis: #DDD1A4;
 }
 
-body {
+.PoppinsRegular {
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.PoppinsItalic {
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.PoppinsMedium {
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.PoppinsMediumItalic {
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.PoppinsSemiBold {
+  font-family: "poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.PoppinsSemiBoldItalic {
+  font-family: "poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.PoppinsBold {
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.PoppinsBoldItalic {
+  font-family: "poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.PoppinsBlack {
+  font-family: "poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.PoppinsBlackItalic {
+  font-family: "poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.Sugo {
+  font-family: 'Sugo Pro Classic Trial', sans-serif;
+  font-family: 'Sugo Pro Display Trial', sans-serif;
+}
+
+@font-face {
+  font-family: "Agrandir Grand Heavy";
+  src: url("https://db.onlinewebfonts.com/t/eccf30d3af8a69bf0b97f01c6d46b8e2.eot");
+  src: url("https://db.onlinewebfonts.com/t/eccf30d3af8a69bf0b97f01c6d46b8e2.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/eccf30d3af8a69bf0b97f01c6d46b8e2.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/eccf30d3af8a69bf0b97f01c6d46b8e2.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/eccf30d3af8a69bf0b97f01c6d46b8e2.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/eccf30d3af8a69bf0b97f01c6d46b8e2.svg#Agrandir Grand Heavy")format("svg");
+}
+
+.Agrandir {
+  font-family: "Agrandir Grand Heavy";
+}
+
+
+/* define configurações do body */
+html, body {
   color: var(--cor4)!important;
   background-color: var(--cor4)!important;
 

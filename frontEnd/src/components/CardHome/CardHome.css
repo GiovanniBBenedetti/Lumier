@@ -1,0 +1,109 @@
+.cardHome {
+    background-color: #67295c;
+    border-radius: 20px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 370px;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    margin: auto; 
+    padding: 4% 5%;
+    gap: 15px;
+}
+
+.tituloCard {
+    color: #b28fdd;
+    font-family: 'Sugo Pro Display Trial', sans-serif;
+    font-size: 15px;
+}
+
+.imgCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imgCard img {
+    width: 325px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.textoCard {
+    font-size: 13px;
+    color: #ceb456;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: justify;
+}
+
+.textoCard p {
+  margin: 0 !important;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nota {
+    color: #d8b4fe;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin: 0 !important
+}
+
+.estrela {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-bottom: 3px;
+}
+
+.botao {
+    margin-left: auto;
+}
+
+.button {
+    background-color: #f0ebd8;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #67295c;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    padding: 6px 14px;
+    transition: transform 0.3s ease;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+}
+
+.button:hover {
+    background-color: #d8b4fe;
+}
+
+.seta{
+    width: clamp(1rem, 2vw, 1.5rem);
+    height: auto;
+    transition: transform 0.3s;
+}

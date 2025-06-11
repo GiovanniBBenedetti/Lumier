@@ -1,0 +1,109 @@
+/* paleta de cores */
+:root {
+    --colorUm: #67295C;
+    --colorDois: #CFB556;
+    --colorTres: #DCCAF4;
+    --colorQuatro: #B08DDF;
+    --colorCinco: #E6E4CD;
+    --colorSeis: #DDD1A4;
+}
+
+.divTourHome {
+    background-color: #CFB556;
+}
+
+.linhaVerticalTourHome {
+    border-left: 10px solid;
+    color: #67295C;
+    padding-right: 4%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.tituloTourHome h1 {
+    color: #67295C;
+    align-content: center;
+    font-size: clamp(1rem, 4.6vw, 6rem);
+    line-height: 100%;
+}
+
+.divTourHome {
+    padding: 7% 10%;
+    padding-bottom: 3% !important;
+    justify-content: space-between;
+    padding-top: 5%;
+}
+
+.botaoTourHome {
+    display: flex;
+}
+
+.setaTourHome {
+    width: clamp(1rem, 2vw, 1.5rem);
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.divBotaoTourHome {
+    display: flex;
+    align-items: end;
+    border: none;
+}
+
+.divBotaoTourHome button {
+    border: none;
+    border-radius: 50px;
+    background-color: #E6E4CD;
+    color: #B08DDF;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.divBotaoTourHome:hover button {
+    background-color: #B08DDF;
+    color: #E6E4CD;
+    transform: scale(1.05);
+}
+
+.carrosselTour {
+    background-color: #CFB556;
+}
+
+.rowVantagensAmbientes {
+    background-color: #CFB556;
+    padding-top: 2%;
+    padding-bottom: 4%;
+}
+
+.divVantagensIcons p {
+    font-size: 0.7rem;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    max-width: 100px;
+    color: #67295C;
+}
+
+.divVantagensIcons img {
+    width: 30%;
+}
+
+.divVantagensIcons {
+    gap: 8;
+    justify-content: center;
+}
+
+.divVantagensAmbientes {
+    background-color: #E6E4CD;
+    padding: 2%;
+    border-radius: 15px;
+    justify-content: space-around;
+}
+
+.rowVantagensAmbientes {
+    display: flex;
+    justify-content: center;
+}

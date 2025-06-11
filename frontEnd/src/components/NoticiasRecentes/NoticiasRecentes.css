@@ -1,0 +1,57 @@
+/* paleta de cores */
+:root {
+    --colorUm: #67295C;
+    --colorDois: #CFB556;
+    --colorTres: #DCCAF4;
+    --colorQuatro: #B08DDF;
+    --colorCinco: #E6E4CD;
+    --colorSeis: #DDD1A4;
+}
+
+.noticiasRecentesDiv {
+    padding: 7% 10%;
+    padding-bottom: 0 !important;
+    justify-content: space-between;
+    background-color: #CFB556;
+}
+
+.divDireitaNoticiasRecentes {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center !important;
+}
+
+.tituloNoticiasRecentes h1 {
+    color: #67295C;
+    font-size: clamp(1rem, 4.6vw, 6rem);
+    line-height: 60px;
+}
+
+.linhaVerticalNoticiasRecentes {
+    height: 130px;
+    border-left: 10px solid;
+    color: #67295C;
+    padding-right: 4%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.newsNoticiasRecentes {
+    text-align: center;
+    white-space: nowrap;
+    color: #e6e4cd00;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-size: clamp(1rem, 5.6vw, 6rem);
+    line-height: 1;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #E6E4CD;
+}
+
+.imgCelularNoticiasRecentes {
+    padding: 10% 8%;
+    padding-bottom: 0 !important;
+}

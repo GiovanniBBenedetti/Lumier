@@ -1,0 +1,252 @@
+/* paleta de cores */
+:root {
+  --colorUm: #67295C;
+  --colorDois: #CFB556;
+  --colorTres: #DCCAF4;
+  --colorQuatro: #B08DDF;
+  --colorCinco: #E6E4CD;
+  --colorSeis: #DDD1A4;
+}
+
+.divCardapio {
+  background-color: #67295C;
+  justify-content: space-between;
+}
+
+.divCardapioEsquerda {
+  padding: 7% 10%;
+  padding-bottom: 3% !important;
+  justify-content: space-between;
+  padding-right: 5%;
+  padding-top: 5%;
+}
+
+.tituloCardapio h1 {
+  color: #CFB556;
+  font-size: clamp(1rem, 4.6vw, 6rem);
+  line-height: 100%;
+}
+
+.linhaVerticalCardapio {
+  border-left: 10px solid;
+  color: #CFB556;
+  padding-right: 4%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.diasCardapio {
+  padding: 5% 0%;
+}
+
+.diasCardapio .accordion-button {
+  background-color: #d4b3f0;
+  color: #4a1f3d;
+  font-weight: bold;
+  justify-content: center;
+  border-radius: 30px !important;
+  margin: 10px 0;
+  box-shadow: none;
+  border: none;
+  font-size: clamp(0.8rem, 0.9vw, 2rem);
+  width: clamp(10.0rem, 13.0vw, 20rem);
+}
+
+.diasCardapio .accordion-button:not(.collapsed) {
+  background-color: #d4b3f0;
+  color: #4a1f3d;
+  box-shadow: none;
+}
+
+.diasCardapio .accordion-item {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.diasCardapio .accordion-body {
+  background-color: #E6E4CD;
+  border-radius: 30px;
+  padding: 15px;
+  color: #4a1f3d;
+  width: 60%;
+}
+
+.accordion-body {
+  background-color: #d4b3f0;
+  border-radius: 30px;
+  padding: 15px;
+  margin: 10px 0;
+  color: #4a1f3d;
+  font-weight: bold;
+}
+
+.accordion-body p {
+  font-size: clamp(0.8rem, 0.9vw, 2rem);
+  color: #67295C;
+}
+
+.accordion-extra {
+  margin-top: 10px;
+}
+
+.accordion-extra p {
+  color: #b99101 !important;
+}
+
+.botoesCardapio {
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.botaoOpcaoCardapio {
+  text-align: center;
+  flex: 1;
+  max-width: 23%;
+}
+
+.botaoOpcaoCardapio button {
+  background-color: #CFB556;
+  border: none;
+  border-radius: 60px;
+  width: 40%;
+  transition: all 0.3s ease;
+}
+
+.botaoOpcaoCardapio:hover button {
+  background-color: #CFB556;
+  transform: scale(1.05);
+}
+
+.botaoOpcaoCardapio:hover p {
+  color: #CFB556;
+}
+
+.botaoOpcaoCardapio button img {
+  padding: 20%;
+}
+
+.botaoOpcaoCardapio p {
+  line-height: 90%;
+  padding: 10% !important;
+  color: #DDD1A4;
+  font-size: clamp(0.8rem, 0.9vw, 2rem);
+}
+
+.imgCardapioUm {
+  align-content: center;
+  justify-content: right !important;
+  padding: 0;
+  margin: 0;
+  display: block;
+  justify-content: right;
+}
+
+@media (max-width: 992px) {
+  .tituloCardapio h1 {
+    font-size: clamp(1rem, 7.5vw, 9rem);
+  }
+
+  .cardapioImgPratoUm {
+    display: none !important;
+  }
+
+  .cardapioImgPratoDois {
+    display: flex !important;
+    padding: 0% 7% !important;
+  }
+
+  .diasCardapio .accordion-item {
+    justify-content: center;
+    gap: 3%;
+  }
+
+  .divCardapioEsquerda {
+    padding: 10% !important;
+    padding-bottom: 0% !important;
+  }
+
+  .linhaVerticalCardapio {
+    border-left: 10px solid;
+    color: #CFB556;
+    padding-right: 4%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .diasCardapio .accordion-item {
+    display: block !important;
+  }
+
+  .diasCardapio .accordion-body {
+    width: 100%;
+    padding: 5% !important;
+  }
+
+  .diasCardapio .accordion-button {
+    width: 100%;
+    font-size: clamp(0.7rem, 0.9vw, 2rem);
+  }
+
+  .accordion-body p {
+    font-size: clamp(0.7rem, 0.9vw, 2rem);
+  }
+
+  .accordion-button {
+    padding: 3%;
+  }
+
+  .divCardapioEsquerda {
+    padding: 0 !important;
+    display: block;
+    margin: auto;
+  }
+
+  .divCardapio {
+    margin: 10% !important;
+  }
+
+  .cardapioImgPratoDois {
+    padding: 0% !important;
+  }
+
+  .botoesCardapio {
+    justify-content: center;
+  }
+
+  .botaoOpcaoCardapio {
+    text-align: center;
+    flex: 1 1 48%;
+    max-width: 48%;
+  }
+
+  .botaoOpcaoCardapio button {
+    border-radius: 60px;
+    width: 70% !important;
+  }
+
+  .botaoOpcaoCardapio button img {
+    padding: 20%;
+  }
+
+  .botaoOpcaoCardapio p {
+    line-height: 90%;
+    padding: 10% !important;
+    color: #CFB556;
+    font-size: clamp(0.6rem, 0.9vw, 2rem);
+  }
+
+  .linhaVerticalCardapio {
+    display: none;
+  }
+
+  .tituloCardapio {
+    justify-content: center;
+  }
+}

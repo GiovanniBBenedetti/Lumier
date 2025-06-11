@@ -1,0 +1,31 @@
+/* paleta de cores */
+:root {
+  --colorUm: #67295C;
+  --colorDois: #CFB556;
+  --colorTres: #DCCAF4;
+  --colorQuatro: #B08DDF;
+  --colorCinco: #E6E4CD;
+  --colorSeis: #DDD1A4;
+}
+
+.Swiper.swiperTour {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.swiperTour .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  opacity: 1;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+  background-color: #67295c74;
+}
+
+.swiperTour .swiper-pagination-bullet-active {
+  background-color: #67295C !important;
+}
+
+.swiper-slide {
+  padding: 1% !important;
+}

@@ -51,10 +51,10 @@ export default function footer() {
                                     <Link href="/suaNoticia">Sua Notícia</Link>
                                 </li>
                                 <li>
-                                    <Link href="/tour">Tour</Link>
+                                    <Link href="/login">Login</Link>
                                 </li>
                                 <li>
-                                    <Link href="/login">Login</Link>
+                                    <Link href="/sobreNos">Sobre nós</Link>
                                 </li>
                             </ul>
                         </div>

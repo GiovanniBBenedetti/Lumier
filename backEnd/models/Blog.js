@@ -76,7 +76,7 @@ const criarRecomendacao = async (blogData) => {
 
 const listarRecomendacao = async () => {
     try {
-        return await readAll('recomendacoes');
+        return await readAll('recomendacoes', null, 'data_publicacao DESC');
     } catch (err) {
         console.error('Erro ao listar blogs:', err);
         throw err;

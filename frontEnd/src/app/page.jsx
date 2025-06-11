@@ -2,8 +2,17 @@
 import { Poppins } from 'next/font/google';
 import './home.css';
 import EventosHome from '@/components/eventosHome/eventosHome'
-import IntroHome from '@/components/IntroHome/IntroHome';
+import Categorias from "@/components/Categorias/Categorias";
+import NoticiasRecentes from "@/components/NoticiasRecentes/NoticiasRecentes";
 
+import Cardapio from "@/components/Cardapio/Cardapio";
+
+import TourHome from "@/components/Tour/Tour";
+import SobreHome from "@/components/SobreHome/SobreHome";
+
+
+
+import IntroHome from '@/components/IntroHome/IntroHome';
 const poppins = Poppins({
   subsets: ['latin'],
   weight: '700',
@@ -17,21 +26,24 @@ export default function Page() {
     <>
 
       <IntroHome/>
-      <EventosHome/>
+
+    <Categorias></Categorias>
+    <NoticiasRecentes></NoticiasRecentes>
+    <EventosHome/>
+    <Cardapio></Cardapio>
+    <TourHome></TourHome>
+    <SobreHome></SobreHome>
+
+
+
+    
  
 
 
 
 
-      <div className='part2'>
-
-      </div>
 
 
-
-      <section className={`sobre-nos-section ${poppins.className}`}>
-
-      </section>
    
     </>
   );

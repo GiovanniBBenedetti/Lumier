@@ -1,0 +1,141 @@
+/* paleta de cores */
+:root {
+  --colorUm: #67295C;
+  --colorDois: #CFB556;
+  --colorTres: #DCCAF4;
+  --colorQuatro: #B08DDF;
+  --colorCinco: #E6E4CD;
+  --colorSeis: #DDD1A4;
+}
+
+.divCategorias {
+  background-color: #E6E4CD;
+  padding-bottom: 4% !important;
+}
+
+.divCategoriasTitulos {
+  padding: 5% 10%;
+  padding-bottom: 5% !important;
+  display: flex;
+  justify-content: center;
+}
+
+.titulosDireitaCategorias {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.newsCategoria {
+  width: 100%;
+  text-align: left;
+  font-size: clamp(1rem, 5.6vw, 6rem);
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  color: #B08DDF;
+}
+
+.botaoCategorias {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  justify-content: end !important;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.botaoCategorias button {
+  background-color: var(--colorUm);
+  border: none;
+  border-radius: 40px;
+  font-size: clamp(0.5rem, 1.2vw, 1.1rem);
+  color: var(--colorDois);
+  padding: 0.6em 1.5em;
+  white-space: nowrap;
+  min-width: 0;
+  max-width: 100%;
+  transition: background-color 0.3s;
+}
+
+.botaoCategorias:hover {
+  transform: scale(1.05);
+}
+
+.botaoCategorias:hover button {
+  background-color: #c6b0e2;
+  color: #67295C
+}
+
+.setaCategorias {
+  width: clamp(1rem, 2vw, 1.5rem);
+  height: auto;
+  transition: transform 0.3s;
+}
+
+@media (max-width: 575px) {
+  .titulosDireitaCategorias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 3%;
+  }
+
+  .newsCategoria {
+    padding-top: 1% !important;
+  }
+
+  .botaoCategorias button {
+    font-size: clamp(0.5rem, 1.0vw, 1.1rem);
+  }
+
+  .newsCategoria {
+    width: 70%;
+    text-align: left;
+    font-size: clamp(1rem, 5.6vw, 6rem);
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    color: #B08DDF;
+  }
+}
+
+@media (max-width: 430px) {
+  .titulosDireitaCategorias {
+    display: block;
+    justify-items: center !important;
+  }
+
+  .newsCategoria {
+    text-align: center;
+    font-size: clamp(1rem, 10.6vw, 11rem);
+  }
+
+  .setaCategorias {
+    width: clamp(0.5rem, 2vw, 1.5rem);
+    height: auto;
+    transition: transform 0.3s;
+  }
+
+  .botaoCategorias button {
+    font-size: clamp(0.4rem, 1.0vw, 1.1rem);
+    color: var(--colorDois);
+    padding: 0.6em 1.5em;
+    white-space: nowrap;
+    min-width: 0;
+    max-width: 100%;
+    transition: background-color 0.3s;
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-slide.swiper-slide-active {
+    display: flex;
+    justify-content: center !important;
+  }
+}

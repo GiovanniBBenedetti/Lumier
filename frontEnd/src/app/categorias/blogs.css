@@ -5,6 +5,10 @@
 
 }
 
+
+
+
+
 .titulo-categorias {
   color: #e5c862;
   font-weight: 800;
@@ -64,7 +68,14 @@ align-items: center;
   padding: 40px 0;
   background-color: var(--cor1);
 }
-
+.blog-carousel-section-tecnologia{
+  padding: 40px 0;
+  background-color: var(--cor3);
+}
+.blog-carousel-section-esportes{
+  padding: 40px 0;
+  background-color: var(--cor6);
+}
 .blog-swiper {
   padding: 20px;
 }

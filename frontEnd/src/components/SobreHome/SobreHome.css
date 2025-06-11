@@ -1,0 +1,79 @@
+/* paleta de cores */
+:root {
+    --colorUm: #67295C;
+    --colorDois: #CFB556;
+    --colorTres: #DCCAF4;
+    --colorQuatro: #B08DDF;
+    --colorCinco: #E6E4CD;
+    --colorSeis: #DDD1A4;
+}
+
+.divSobreHome {
+    background-color: #E6E4CD;
+}
+
+.linhaVerticalSobreHome {
+    border-left: 10px solid;
+    color: #67295C;
+    padding-right: 4%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.tituloSobreHome h1 {
+    color: #67295C;
+    align-content: center;
+    font-size: clamp(1rem, 4.6vw, 6rem);
+    line-height: 100%;
+}
+
+.divSobreHome {
+    padding: 7% 10%;
+    padding-bottom: 3% !important;
+    justify-content: space-between;
+    padding-top: 5%;
+}
+
+.botaoSobreHome {
+    display: flex;
+}
+
+.setaSobreHome {
+    width: clamp(1rem, 2vw, 1.5rem);
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.divBotaoSobreHome {
+    display: flex;
+    align-items: end;
+    border: none;
+}
+
+.divBotaoSobreHome button {
+    border: none;
+    border-radius: 50px;
+    background-color: #B08DDF;
+    color: #E6E4CD;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.divBotaoSobreHome:hover button {
+    background-color: #CFB556;
+    color: #67295C;
+    transform: scale(1.05);
+}
+
+.rowSobreHome {
+    background-color: #CFB556;
+    padding-top: 2%;
+    padding-bottom: 4%;
+}
+
+.sobreHome {
+    background-color: #E6E4CD !important;
+}

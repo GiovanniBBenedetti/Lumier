@@ -5,7 +5,7 @@ export default function CardNoticia({ titulo, imagem, conteudo, data_publicacao,
     return (
         <div className="custom-card">
             <h5 className="tituloCard">
-                {titulo.length > 80 ? titulo.substring(0, 80) + '...' : titulo}
+                {titulo.length > 20 ? titulo.substring(0, 30) + '...' : titulo}
             </h5>
 
 

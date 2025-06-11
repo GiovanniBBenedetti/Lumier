@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { Poppins } from 'next/font/google';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 import './SuaNoticia.css';
 import PerguntasSuaNoticia from '@/components/perguntasSuaNoticia/perguntas';
@@ -32,19 +31,6 @@ export default function SuaNoticia() {
     const t = localStorage.getItem('token');
     setToken(t || '');
 
-    if (t) {
-      fetch('http://localhost:3200/usuario/dashboard', {
-        headers: { Authorization: `Bearer ${t}` },
-      }).then(async (res) => {
-        if (res.ok) {
-          const data = await res.json();
-          setEmail(data.email);
-        } else {
-          localStorage.removeItem('token');
-          localStorage.removeItem('nome');
-        }
-      });
-    }
   }, []);
 
   useEffect(() => {
@@ -222,6 +208,7 @@ export default function SuaNoticia() {
                     className="form-control"
                     accept="image/*"
                     onChange={e => setImagem(e.target.files[0])}
+                    required
                   />
                 </div>
 

@@ -6,8 +6,9 @@
   min-height: 90vh;
  background-color: var(--cor1);
   padding: 40px 15px;
+  background-image: url('/imgPerfil.png');
 }
-
+ 
 .usuario-card {
   background-color: var(--cor4);
   border-radius: 20px;
@@ -16,7 +17,7 @@
   max-width: 600px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
 }
-
+ 
 .usuario-titulo {
   text-align: center;
   font-size: 28px;
@@ -24,13 +25,83 @@
   margin-bottom: 30px;
   font-weight: bold;
 }
+ 
+ 
+ 
 .card img{
-      width: 100%;
-  height: 420px;
+  width: 100%;
+  height: 300px;
   object-fit: cover;
-
 }
-
+ 
+.card {
+  background-color: #67295c;
+  border-radius: 20px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  border: none;
+}
+ 
+/*título sobre a imagem */
+.card-img-top {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 8%;
+  z-index: 1;
+}
+ 
+/* Título em cima da imagem */
+.card-title {
+  position: absolute;
+  top: 1px;
+  left: 15px;
+  right: 15px;
+  color: #d0b3f4;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 8px 12px;
+  z-index: 3;
+  text-align: center;
+}
+ 
+/* Texto do conteúdo */
+.card-text {
+  font-size: 13px;
+  color: #ceb456;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+ 
+ 
+.card-body p:last-child {
+  font-size: 13px;
+  color: #d0b3f4;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.card-body p:last-child::after {
+  content: attr(data-estado);
+  background-color: #e6e4cd;
+  color: #67295c;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: auto;
+  cursor: pointer;
+}
+ 
 .usuario-info {
   display: flex;
   flex-direction: column;
@@ -38,7 +109,7 @@
   font-size: 16px;
   color: var(--cor4);
 }
-
+ 
 .usuario-item {
   background-color: #f6f6f9;
   padding: 15px 20px;
@@ -47,7 +118,7 @@
   align-items: center;
   font-weight: 500;
 }
-
+ 
 .btn-logout {
   background-color: #e74c3c;
   color: white;
@@ -59,7 +130,8 @@
   margin: 0 auto;
   transition: background 0.3s ease;
 }
-
+ 
 .btn-logout:hover {
   background-color: #c0392b;
 }
+ 
