@@ -41,6 +41,7 @@ export default function AdminPage() {
       if (res.status === 403 || res.status === 401) {
         localStorage.removeItem('token');
         localStorage.removeItem('nome');
+            localStorage.removeItem('tipo');
         window.location.href = '/login';
       } else {
         const data = await res.json();

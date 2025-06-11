@@ -17,9 +17,9 @@ export default function IntroHome() {
 
                     <div className="botoesBannerHomeUm">
                         <div className="botaoIntroHome">
-                           <Link href='/blogs'>
+                           <Link href='/categorias'>
                               <button>
-                                Envie a sua própria notícia
+                               Confira nossas notícias
                             </button>
                             </Link>
                           
@@ -37,7 +37,7 @@ export default function IntroHome() {
                         </div>
 
                         <div className="botaoIntroHome">
-                             <Link href='/suaNoticia'>
+                             <Link href='/tour'>
                               <button>
                                 Faça um tour na escola
                             </button>

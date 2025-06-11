@@ -4,17 +4,22 @@ import Link from 'next/link';
 export default function CardNoticia({ titulo, imagem, conteudo, data_publicacao, id }) {
     return (
         <div className="custom-card">
-            <h5 className="titulo">
+            <h5 className="tituloCard">
                 {titulo.length > 80 ? titulo.substring(0, 80) + '...' : titulo}
             </h5>
 
 
             <div className="img-container">
-                <img
-                    src={`http://localhost:3200${imagem}`}
-                    className="img-fluid"
-                    alt={titulo}
-                />
+             {imagem ? (
+  <img
+    src={`http://localhost:3200${imagem}`}
+    className="img-fluid"
+    alt={titulo}
+  />
+) : (
+  <div className="img-placeholder">Imagem não disponível</div>
+)}
+
             </div>
 
             <p className="descricao">

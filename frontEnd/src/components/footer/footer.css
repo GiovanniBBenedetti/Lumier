@@ -29,6 +29,9 @@ footer{
     position: relative;
     text-transform: uppercase;
 }
+.footer-col img{
+    width: 150px;
+}
 .footer-col ul{
     list-style: none;
 }

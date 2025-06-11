@@ -1,5 +1,6 @@
 import './footer.css'
 import { Poppins } from 'next/font/google';
+import Link from 'next/link';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -11,65 +12,49 @@ const poppins = Poppins({
 export default function footer() {
     return (
         <>
-
-
             <footer className={`${poppins.className}`}>
                 <div className="container-footer">
                     <div className="row-footer">
 
                         <div className="footer-col">
-                            <h4>Empresa</h4>
+                            <img src="/LogoLumier2.png" alt="" />
+                        </div>
+
+                        <div className="footer-col">
+                            <h4>Notícias</h4>
                             <ul>
                                 <li>
-                                    <a href="#"> Quem somos </a>
+                                    <Link href="/categoria/espotes">Esportes</Link>
                                 </li>
                                 <li>
-                                    <a href=""> nossos serviços </a>
+                                    <Link href="/categoria/educacao">Educação</Link>
                                 </li>
                                 <li>
-                                    <a href=""> política de privacidade </a>
+                                    <Link href="/categoria/cultura">Cultura</Link>
                                 </li>
                                 <li>
-                                    <a href=""> programa de afiliados</a>
+                                    <Link href="/categoria/tecnologia">Tecnologia</Link>
+                                </li>
+                                <li>
+                                    <Link href="/categoria">Todas as Notícias</Link>
                                 </li>
                             </ul>
                         </div>
 
                         <div className="footer-col">
-                            <h4>Obter ajuda</h4>
+                            <h4>Principal</h4>
                             <ul>
                                 <li>
-                                    <a href="#">FAQ</a>
+                                    <Link href="/">Home</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Transporte</a>
+                                    <Link href="/suaNoticia">Sua Notícia</Link>
                                 </li>
                                 <li>
-                                    <a href="#">devoluções</a>
+                                    <Link href="/tour">Tour</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Status De Pedido</a>
-                                </li>
-                                <li>
-                                    <a href="#">Opções De Pagamento</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div className="footer-col">
-                            <h4>Loja online</h4>
-                            <ul>
-                                <li>
-                                    <a href="#">Relógio</a>
-                                </li>
-                                <li>
-                                    <a href="#">Saco</a>
-                                </li>
-                                <li>
-                                    <a href="#">Calçado</a>
-                                </li>
-                                <li>
-                                    <a href="#">Endereço</a>
+                                    <Link href="/login">Login</Link>
                                 </li>
                             </ul>
                         </div>
@@ -87,21 +72,21 @@ export default function footer() {
                                 </form>
                             </div>
                             <div className="medias-socias">
-                                <a href="#">
+                                <Link href="#">
                                     <i className="bi bi-linkedin"></i>
-                                </a>
-                                <a href="#">
+                                </Link>
+                                <Link href="#">
                                     <i className="bi bi-instagram"></i>
-                                </a>
-                                <a href="#">
+                                </Link>
+                                <Link href="#">
                                     <i className="bi bi-facebook"></i>
-                                </a>
-                                <a href="#">
+                                </Link>
+                                <Link href="#">
                                     <i className="bi bi-youtube"></i>
-                                </a>
-                                <a href="#">
-                                   <i className="bi bi-twitter-x"></i>
-                                </a>
+                                </Link>
+                                <Link href="#">
+                                    <i className="bi bi-twitter-x"></i>
+                                </Link>
                             </div>
                         </div>
 

@@ -26,17 +26,17 @@
   font-family: 'Poppins', sans-serif;
   position: relative;
   border-radius: 16px;
-  overflow: hidden;
+  
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-height: 570px;
+    height: 570px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.custom-card .titulo {
+.custom-card .tituloCard {
   font-size: 1.4rem;
   font-weight: 800;
   color: #dfcbf1;

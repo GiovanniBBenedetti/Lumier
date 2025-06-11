@@ -1,0 +1,31 @@
+
+
+.text-primary {
+  color: var(--cor6) !important;
+}
+
+.btn-outline-secondary {
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--cor5);
+  color: white;
+}
+
+.animate__fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.semBusca{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+    
+}
+.semBusca img{
+    width: 300px;
+}

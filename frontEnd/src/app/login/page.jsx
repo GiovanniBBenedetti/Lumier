@@ -26,7 +26,10 @@ export default function LoginPage() {
 
       localStorage.setItem('token', data.token)
       localStorage.setItem('nome', data.nome)
+      localStorage.setItem('tipo', data.tipo)
+      localStorage.setItem('email', data.email)
 
+      console.log(data)
       if (data.tipo === 'admin') {
         window.location.href = '/admin'
       } else {
@@ -52,11 +55,6 @@ export default function LoginPage() {
         <div className='login-titulo'>
           <h1>SEJA BEM VINDO!</h1>
         </div>
-
-        <div className='login-link-cadastro'>
-          <a href="/Cadastro">Não tem uma conta? Cadastre-se</a>
-        </div>
-
         <form className='login-informacoes' onSubmit={handleLogin}>
           <div className='login-caixa-input'>
             <span className='login-label'>Email</span>

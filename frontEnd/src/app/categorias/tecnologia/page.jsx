@@ -63,7 +63,7 @@ body{
             <div className='categoriaNoticias py-5'>
                 <div className="container py-3">
                     <div className='títuloCategoria'>
-                        <h1 className={`${Sugofont.className}`}>O CONHECIMENTO CULTURAL QUE VOCÊ MERECE </h1>
+                        <h1 className={`${Sugofont.className}`}>NA ERA DA INFORMAÇÃO, SABER USAR A TECNOLOGIA É PODER</h1>
                     </div>
 
                     <div className="row">
