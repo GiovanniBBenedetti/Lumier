@@ -1,4 +1,4 @@
-import { read, update, deleteRecord } from "../config/database.js";
+import { read, update, deleteRecord, create } from "../config/database.js";
 
 const obterUsuario = async (email) => {
     try {
@@ -9,13 +9,22 @@ const obterUsuario = async (email) => {
     }
 };
 
+const criarUsuario = async (dados) =>{
+    try {
+        return await create('usuarios', dados)
+    } catch (err) {
+        console.error('Erro ao criar usuario: ', err)
+        throw err
+    }
+}
+
 const atualizarUsuario = async (email, usuarioData) => {
     try {
         await update('usuarios', usuarioData, `email = '${email}'`);
     } catch (error) {
         console.error('Erro ao atualizar usuário:', error);
         throw error;
-    }
+    }   
 };
 
 const excluirUsuario = async (email) => {
@@ -27,4 +36,4 @@ const excluirUsuario = async (email) => {
     }
 };
 
-export { obterUsuario, atualizarUsuario, excluirUsuario };
+export { obterUsuario, atualizarUsuario, excluirUsuario, criarUsuario };

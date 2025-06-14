@@ -27,7 +27,7 @@ export default function Cardapio() {
                                     </h2>
 
                                     <div className="accordion-body">
-                                        <p>Categoria ex.almoço</p>
+                                        <p>Categoria almoço e sobremesa</p>
 
                                         <div
                                             id="collapseOne"
@@ -59,7 +59,7 @@ export default function Cardapio() {
                                     </h2>
 
                                     <div className="accordion-body">
-                                        <p>Categoria ex.almoço</p>
+                                        <p>Categoria almoço e sobremesa</p>
 
                                         <div
                                             id="collapseTwo"
@@ -69,8 +69,8 @@ export default function Cardapio() {
                                             <div className="accordion-extra">
                                                 <p>arroz</p>
                                                 <p>feijão</p>
-                                                <p>salada</p>
-                                                <p>suco</p>
+                                                <p>frango</p>
+                                                <p>suco de uva</p>
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@ export default function Cardapio() {
                                     </h2>
 
                                     <div className="accordion-body">
-                                        <p>Categoria ex.almoço</p>
+                                        <p>Categoria almoço e sobremesa</p>
 
                                         <div
                                             id="collapseThree"
@@ -98,9 +98,9 @@ export default function Cardapio() {
                                             data-bs-parent="#accordionExample"
                                         >
                                             <div className="accordion-extra">
-                                                <p>arroz</p>
+                                                <p>arroz </p>
                                                 <p>feijão</p>
-                                                <p>salada</p>
+                                                <p>strogonoff</p>
                                                 <p>suco</p>
                                             </div>
                                         </div>
@@ -121,7 +121,7 @@ export default function Cardapio() {
                                     </h2>
 
                                     <div className="accordion-body">
-                                        <p>Categoria ex.almoço</p>
+                                        <p>Categoria almoço e sobremesa</p>
 
                                         <div
                                             id="collapseFour"
@@ -129,10 +129,10 @@ export default function Cardapio() {
                                             data-bs-parent="#accordionExample"
                                         >
                                             <div className="accordion-extra">
-                                                <p>arroz</p>
-                                                <p>feijão</p>
-                                                <p>salada</p>
-                                                <p>suco</p>
+                                                <p>Lasanha de Queijo</p>
+                                                <p>Queijo ralado</p>
+                                                <p>Frango</p>
+                                                <p>Suco de Abacaxi</p>
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +152,7 @@ export default function Cardapio() {
                                     </h2>
 
                                     <div className="accordion-body">
-                                        <p>Categoria ex.almoço</p>
+                                        <p>Categoria almoço e sobremesa</p>
 
                                         <div
                                             id="collapseFive"
@@ -160,10 +160,10 @@ export default function Cardapio() {
                                             data-bs-parent="#accordionExample"
                                         >
                                             <div className="accordion-extra">
-                                                <p>arroz</p>
-                                                <p>feijão</p>
-                                                <p>salada</p>
-                                                <p>suco</p>
+                                                <p>Macarrão</p>
+                                                <p>Molho</p>
+                                                <p>Carne Moida</p>
+                                                <p>Suco de Laranja</p>
                                             </div>
                                         </div>
                                     </div>

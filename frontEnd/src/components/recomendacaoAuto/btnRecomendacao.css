@@ -1,0 +1,6 @@
+.btnRecomendacao{
+    padding: 10px 10px;
+    border: none;
+    background-color: var(--cor6);
+    color: white;
+}

@@ -39,7 +39,7 @@ export default function IntroHome() {
                         <div className="botaoIntroHome">
                              <Link href='/tour'>
                               <button>
-                                Faça um tour na escola
+                                Sobre a escola
                             </button>
                             </Link>
                           

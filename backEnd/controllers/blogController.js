@@ -1,4 +1,4 @@
-import { obterRecomendacaoPorId, listarBlog, obterBlogPorId, criarBlog, atualizarBlog, excluirBlog, obterBlogPorEmail, criarRecomendacao, listarRecomendacao, atualizarRecomendacao } from "../models/Blog.js"
+import { obterRecomendacaoPorId,obterBlogPorEmail, obterRecomendacaoPorEmail, listarBlog, obterBlogPorId, criarBlog, atualizarBlog, excluirBlog, criarRecomendacao, listarRecomendacao, atualizarRecomendacao } from "../models/Blog.js"
 import { fileURLToPath } from 'url';
 import path from 'path'
 
@@ -38,6 +38,8 @@ const criarBlogController = async (req, res) => {
     try {
         const { titulo, conteudo, tags, tipo } = req.body;
         const autor = req.usuario.nome
+        const email = req.usuario.email
+
         let capaPath = null;
         if (req.file) {
             capaPath = req.file.path.replace(__dirname.replace('\\controllers', ''), '');
@@ -50,6 +52,7 @@ const criarBlogController = async (req, res) => {
             data_publicacao: new Date(),
             autor: autor,
             imagem1: capaPath,
+            email: email
 
         };
         const blogId = await criarBlog(blogData);
@@ -95,6 +98,7 @@ const excluirBlogController = async (req, res) => {
 
 ///////////////////////////recomendação///////////////////////////////
 
+
 const obterBlogPorEmailController = async (req, res) => {
     try {
         const blog = await obterBlogPorEmail(req.params.email)
@@ -104,6 +108,22 @@ const obterBlogPorEmailController = async (req, res) => {
             res.status(404).json({ mensagem: 'Nenhum blog por este usuario' })
         }
     } catch (err) {
+        console.log(err)
+        res.status(500).json({ erro: 'Erro ao buscar usuário' });
+    }
+}
+
+
+const obterRecomendacaoPorEmailController = async (req, res) => {
+    try {
+        const blog = await obterRecomendacaoPorEmail(req.params.email)
+        if (blog) {
+            res.status(200).json(blog)
+        } else {
+            res.status(404).json({ mensagem: 'Nenhum blog por este usuario' })
+        }
+    }
+    catch (err) {
         console.log(err)
         res.status(500).json({ erro: 'Erro ao buscar usuário' });
     }
@@ -159,7 +179,7 @@ const obterRecomendacaoController = async (req, res) => {
         const blogs = await listarRecomendacao()
         res.status(200).json(blogs)
     }
-    catch (error) {
+    catch (err) {
         console.error('Erro ao listar blogs: ', err)
         res.status(500).json({ mensagem: 'Erro ao listar blogs' })
     }
@@ -202,5 +222,5 @@ const atualizarRecomendacaoController = async (req, res) => {
 
 
 export {
-    obterRecomendacaoPorIdController, atualizarRecomendacaoController, criarRecomendacaoController, listarBlogController, obterBlogPorIdController, criarBlogController, atualizarBlogController, excluirBlogController, obterBlogPorEmailController, obterRecomendacaoController
+    obterRecomendacaoPorIdController,obterBlogPorEmailController, obterRecomendacaoPorEmailController, atualizarRecomendacaoController, criarRecomendacaoController, listarBlogController, obterBlogPorIdController, criarBlogController, atualizarBlogController, excluirBlogController, obterRecomendacaoController
 };

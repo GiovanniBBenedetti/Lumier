@@ -3,7 +3,7 @@ import "./SobreHome.css";
 export default function SobreHome() {
     return (
         <>
-            <div className="container-fluid">
+            <div className="container-fluid sobrenos">
                 <div className="sobreHome">
                     <div className="row divSobreHome d-flex">
                         <div className="tituloSobreHome d-flex col-7">
@@ -18,8 +18,8 @@ export default function SobreHome() {
                         </div>
                     </div>
 
-                    <div className="row rowImgSobreHome p-3">
-                        <img src="./Banners/sobreBannerHome.png" className="img-fluid" alt="imgSobreHome" />
+                    <div className="row rowImgSobreHome">
+                        <img src="./Banners/sobreBannerHome.png" className="img-fluid w-100" alt="imgSobreHome" />
                     </div>
                 </div>
             </div>

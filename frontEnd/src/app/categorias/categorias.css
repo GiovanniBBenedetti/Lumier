@@ -26,3 +26,16 @@
 font-size: 40px;
 }
 }
+
+
+
+
+.btn-Vermais{
+    background-color: var(--cor3);
+    border:none;
+    padding: 10px 40px;
+    color: var(--cor4);
+    font-weight: bold;
+    border-radius: 50px;
+
+}

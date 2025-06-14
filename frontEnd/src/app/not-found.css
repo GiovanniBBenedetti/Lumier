@@ -85,15 +85,13 @@
 .botaoNotFound:hover button {
     background-color: var(--colorTres);
 }
- 
-/* estilização seta not-found */
+
 .setaNotFound {
     width: clamp(0.6rem, 2vw, 1.5rem);
     height: auto;
     transition: transform 0.3s;
 }
- 
-/* responsividade not-found */
+
 @media (max-width: 635px) {
     .botaoNotFound {
         gap: 5px;

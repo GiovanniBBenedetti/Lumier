@@ -1,44 +1,52 @@
+
 .cardHome {
-    background-color: #67295c;
-    border-radius: 20px;
-    flex-direction: column;
-    width: 100%;
-    max-width: 370px;
-    overflow: hidden;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    margin: auto; 
-    padding: 4% 5%;
-    gap: 15px;
+  background-color: #67295c;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 370px;
+  height: 100%; /* garante altura consistente no container pai */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 4% 5%;
+  gap: 15px;
+      margin: auto; 
+  min-height: 480px; /* ajuste conforme o design desejado */
 }
 
 .tituloCard {
-    color: #b28fdd;
-    font-family: 'Sugo Pro Display Trial', sans-serif;
-    font-size: 15px;
+  color: #b28fdd;
+  font-family: 'Sugo Pro Display Trial', sans-serif;
+  font-size: 15px;
+  min-height: 40px; /* garante espaço fixo para o título */
 }
 
 .imgCard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .imgCard img {
-    width: 325px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+  width: 325px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .textoCard {
-    font-size: 13px;
-    color: #ceb456;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    text-align: justify;
+  font-size: 13px;
+  color: #ceb456;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-align: justify;
+  height: 60px; /* limite de altura */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 3 linhas */
+  -webkit-box-orient: vertical;
 }
 
 .textoCard p {
@@ -46,64 +54,58 @@
 }
 
 .icons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+  margin-top: auto;
 }
 
 .score {
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .nota {
-    color: #d8b4fe;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: "Poppins", sans-serif;
-    margin: 0 !important
-}
-
-.estrela {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    margin-bottom: 3px;
+  color: #d8b4fe;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin: 0 !important;
 }
 
 .botao {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .button {
-    background-color: #f0ebd8;
-    border: none;
-    border-radius: 25px;
-    display: flex;
-    gap: 8px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #67295c;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    padding: 6px 14px;
-    transition: transform 0.3s ease;
+  background-color: #f0ebd8;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  gap: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #67295c;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  padding: 6px 14px;
+  transition: transform 0.3s ease;
 }
 
 .botao:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .button:hover {
-    background-color: #d8b4fe;
+  background-color: #d8b4fe;
 }
 
-.seta{
-    width: clamp(1rem, 2vw, 1.5rem);
-    height: auto;
-    transition: transform 0.3s;
+.seta {
+  width: clamp(1rem, 2vw, 1.5rem);
+  height: auto;
+  transition: transform 0.3s;
 }

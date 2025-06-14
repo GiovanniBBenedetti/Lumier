@@ -1,0 +1,10 @@
+.poppin {
+    font-family: 'poppins';
+}
+
+.link {
+    color: var(--cor5);
+}
+.cardText{
+    color: white;
+}

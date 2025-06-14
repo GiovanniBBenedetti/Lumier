@@ -1,6 +1,8 @@
 "use client"
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import './btnRecomendacao.css'
+
 
 export default function CardHome({ blog }) {
 
@@ -91,8 +93,8 @@ export default function CardHome({ blog }) {
 
   return (
     <div className="d-flex flex-column gap-3 my-5">
-      <button onClick={() => { handleAceitar(blog) }} type="button" className="btn btn-primary">Aceitar</button>
-      <button onClick={() => { handleRecusar(blog) }} type="button" className="btn btn-primary">Rejeitar</button>
+      <button onClick={() => { handleAceitar(blog) }} type="button" className="btnRecomendacao">Aceitar</button>
+      <button onClick={() => { handleRecusar(blog) }} type="button" className="btnRecomendacao">Rejeitar</button>
     </div>
   );
 }

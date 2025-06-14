@@ -10,6 +10,17 @@ const listarBlog = async () => {
     }
 };
 
+
+const obterBlogPorEmail = async (email) => {
+    try {
+        return await readMore('noticia', `email = '${email}'`)
+    } catch (error) {
+        console.error('Erro listar blogs:', error);
+        throw error;
+    }
+}
+
+
 const obterBlogPorId = async (id) => {
     try {
         return await read('noticia', `id = ${id}`)
@@ -47,7 +58,7 @@ const excluirBlog = async (id) => {
     }
 };
 
-const obterBlogPorEmail = async (autor) => {
+const obterRecomendacaoPorEmail = async (autor) => {
     try {
         return await readMore('recomendacoes', `email = '${autor}'`)
     } catch (error) {
@@ -92,4 +103,4 @@ const atualizarRecomendacao = async (id, blogData) => {
     }
 };
 
-export { listarBlog, obterBlogPorId, criarBlog, atualizarBlog, excluirBlog, obterBlogPorEmail, criarRecomendacao, listarRecomendacao, atualizarRecomendacao, obterRecomendacaoPorId }
+export { listarBlog,obterBlogPorEmail, obterBlogPorId, criarBlog, atualizarBlog, excluirBlog, obterRecomendacaoPorEmail, criarRecomendacao, listarRecomendacao, atualizarRecomendacao, obterRecomendacaoPorId }

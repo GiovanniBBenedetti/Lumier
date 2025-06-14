@@ -31,7 +31,6 @@ export default function Page() {
     <NoticiasRecentes></NoticiasRecentes>
     <EventosHome/>
     <Cardapio></Cardapio>
-    <TourHome></TourHome>
     <SobreHome></SobreHome>
 
 

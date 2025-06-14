@@ -7,7 +7,7 @@ export default function BlogPlayer({ texto }) {
   const [loading, setLoading] = useState(true);
 
   const textoParaAudio = async (texto) => {
-    const SPEECH_KEY = 'EecUoriGirW1KD2RIJgm9HsSTfyYJmhXnhi8LYjwDcbLWR4jUVUzJQQJ99BFACYeBjFXJ3w3AAAYACOGbkKQ';
+    const SPEECH_KEY = '5zGO5j1bs8poEzJuRE1z16J3TDz4DdNopdfd1Hf4Mn65FDBy5C53JQQJ99BFACYeBjFXJ3w3AAAYACOGDesZ';
     const SPEECH_REGION = 'eastus';
     const url = `https://${SPEECH_REGION}.tts.speech.microsoft.com/cognitiveservices/v1`;
 

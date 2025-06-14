@@ -1,8 +1,9 @@
 import multer from 'multer';
 import path from 'path';
 import express from 'express'
-import { getUsuario, putUsuario, deleteUsuario } from '../controllers/usuarioController.js';
+import { getUsuario, putUsuario, deleteUsuario, postUsuario, getConflito } from '../controllers/usuarioController.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
+import { generateHashedPassword } from "../hashPassword.js"
 import { fileURLToPath } from 'url';
 const router = express.Router()
 
@@ -22,7 +23,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 
-router.get('/',authMiddleware ,getUsuario);
+router.get('/', authMiddleware , getUsuario);
+router.get('/:email', getConflito);
+router.post('/', postUsuario)
 router.put('/', authMiddleware,upload.single('fotoPerfil'),putUsuario);
 router.delete('/',authMiddleware  ,deleteUsuario);
 

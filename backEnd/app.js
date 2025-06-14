@@ -5,6 +5,7 @@ import comentariosBlogRotas from './routes/comentarioBlog.js'
 import adminRotas from './routes/adminRotas.js'
 import usuariosRotas from './routes/usuariosRotas.js'
 import eventosRotas from  './routes/eventoRotas.js'
+import recadoRotas from './routes/recadoRotas.js'
 import cors from 'cors'
 const app = express()
 const port = 3200;
@@ -16,6 +17,7 @@ app.use('/uploads', express.static('uploads'));
 
 
 app.use('/auth', authRotas)
+app.use('/recados', recadoRotas);
 app.use('/blog', blogRotas);
 app.use('/admin', adminRotas);
 app.use('/usuario', usuariosRotas )

@@ -19,7 +19,7 @@ export default function BuscaBlog() {
     <form className="container-input" onSubmit={handleSearch}>
       <input
         type="text"
-        placeholder="Buscar notícias por título, tag ou tipo..."
+        placeholder="Ilumine sua busca pelo conhecimento..."
         name="text"
         className="input"
         value={query}

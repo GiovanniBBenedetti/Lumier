@@ -14,7 +14,7 @@ export default function Categorias() {
         <div className="col-md-4 col-sm-4 titulosDireitaCategorias">
           <h1 className="Agrandir newsCategoria">NEWS</h1>
           <div className="botaoCategorias">
-            <button>Faça seu tour</button>
+            <button>Ver notícias</button>
             <img src="./Elementos/seta.png" className="img-fluid setaCategorias" alt="seta" />
           </div>
         </div>

@@ -22,7 +22,12 @@ export default function CardHome({ blog }) {
 
             </div>
             <div className="textoCard">
-                <p>{blog.conteudo.length > 120 ? blog.conteudo.substring(0, 120) + '...' : blog.conteudo}</p>
+                <p>
+  {blog.conteudo?.length > 120
+    ? blog.conteudo.substring(0, 120) + "..."
+    : blog.conteudo}
+</p>
+
 
             </div>
             <div className="icons">

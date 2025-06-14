@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function CardNoticia({ titulo, imagem, conteudo, data_publicacao, id }) {
     return (
         <div className="custom-card">
-            <h5 className="tituloCard">
+            <h5 className="tituloCardNotícia">
                 {titulo.length > 20 ? titulo.substring(0, 30) + '...' : titulo}
             </h5>
 

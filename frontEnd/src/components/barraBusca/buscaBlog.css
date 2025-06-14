@@ -9,7 +9,7 @@
 .input {
   width: 100%;
   padding: 10px 0px 10px 40px;
-  border-radius: 7px;
+  border-radius: 40px;
   border: solid 3px var(--cor5);
   background-color: var(--cor4);
   color: var(--cor3);

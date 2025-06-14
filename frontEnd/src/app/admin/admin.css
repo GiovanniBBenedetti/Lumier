@@ -1,37 +1,124 @@
-    .formAdicionar{
+    .formAdicionar {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    #conteudo{
+    #conteudo {
         height: 400px;
     }
 
-    .admin-card{
+    .admin-card {
         background-color: var(--cor1);
-        
     }
-    .admin-card h4{
+
+    .admin-card h4 {
         color: var(--cor5);
     }
 
-    .tituloPainel{
+    .tituloPainel {
         color: var(--cor3);
         border-left: 15px solid var(--cor3);
         padding-left: 20px;
-        font-size: 90px;
         max-width: 900px;
         border-radius: 0px 0px 0px 09px;
     }
-    .labelAdm{
-         color: var(--cor5);
+
+    .poppin{
         font-family: 'poppins';
     }
 
-    .btnAdm{
+    .labelAdm {
+        color: var(--cor4);
+        font-family: 'poppins';
+    }
+
+    .btnAdm {
         background-color: var(--cor6);
         border: none;
         color: white;
         padding: 10px 40px 10px 40px;
     }
+
+    .adminTitulo {
+        color: var(--cor6);
+    }
+
+    .inputAdmin {
+        background-color: var(--cor3);
+        color: var(--cor4);
+    }
+
+    .backgroundAdmin {
+        background-color: var(--cor3);
+    }
+
+    .publicar {
+        background-color: var(--cor5);
+    }
+
+    .cardRecomendacao {
+        width: auto;
+    }
+
+    .blog-image img {
+        max-height: 600px;
+        width: 100%;
+        border-radius: 15px;
+        margin-bottom: 30px;
+    }
+
+    .poppin {
+        font-family: 'poppins';
+    }
+    
+    .link {
+        color: var(--cor6);
+    }
+    
+    .card2{
+        background-color: var(--cor4);
+        color: var(--cor6);
+    }
+
+    .cardConteudo{
+        color: var(--cor3);
+    }
+
+    .recomendacaoTexto{
+        color: var(--cor1);
+    }
+
+    .login-caixa-input {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .login-label {
+        position: absolute;
+        top: 10px;
+        left: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        color: #67295c;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .login-caixa-input input {
+        width: 100%;
+        padding: 25px 16px 10px 16px; 
+        font-size: 14px;
+        border: 3px solid #937300;
+        border-radius: 25px;
+        background-color: rgba(206, 180, 86, 0.7);
+        outline: none;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .purple{
+        color: var(--cor5);
+    }
+
+    

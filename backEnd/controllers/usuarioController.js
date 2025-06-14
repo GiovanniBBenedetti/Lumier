@@ -1,12 +1,47 @@
-import { obterUsuario, excluirUsuario, atualizarUsuario } from "../models/Usuario.js";
+import { obterUsuario, excluirUsuario, atualizarUsuario, criarUsuario } from "../models/Usuario.js";
 import { fileURLToPath } from 'url';
 import path from 'path'
+import { generateHashedPassword } from "../hashPassword.js"
 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const postUsuario = async (req, res) => {
+    try {
+        const { email, senha, nome, tipo, turma } = req.body;
+        const senhaHasheada = await generateHashedPassword(senha);
+        const dataAtual = new Date();
+        const usuarioData = {
+            email: email,
+            senha: senhaHasheada,
+            nome: nome,
+            tipo: tipo,
+            turma: turma,
+            dataCriacao: dataAtual,
+            dataAtualizacao: dataAtual
+        }
+        await criarUsuario(usuarioData);
+        res.status(201).json({ mensagem: 'Usuário criado com sucesso' });
+    }
+    catch (err) {
+        console.error('Erro criando usuário: ', err);
+        res.status(500).json({ menssagem: "Erro ao criar usuário" })
+    }
+}
 
+const getConflito = async (req, res) => {
+    try {
+        const email = req.params.email;
+        const usuario = await obterUsuario(email);
+        if (usuario == null) {
+            return res.status(202).json({ mensagem: 'Não há ninguem com este email' });
+        }
+        res.status(200).json({ mensagem: 'Há um usuário com este email' });
+    } catch (error) {
+        res.status(500).json({ erro: 'Erro ao buscar usuário' });
+    }
+};
 
 const getUsuario = async (req, res) => {
     const email = req.usuario.email;
@@ -55,4 +90,4 @@ const deleteUsuario = async (req, res) => {
     }
 };
 
-export { getUsuario, putUsuario, deleteUsuario };
+export { getUsuario, putUsuario, deleteUsuario, postUsuario, getConflito };

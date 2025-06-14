@@ -18,8 +18,7 @@ export default async function DetalhesBlog({ params }) {
     const { id } = await params;
 
     const response = await fetch(`http://localhost:3200/blog/${id}`);
-    const data = await response.json();
-
+    const data = await response.json()
     return (
         <>
             <div className={`container detalhes-blog-page ${poppins.className}`}>
@@ -31,7 +30,7 @@ export default async function DetalhesBlog({ params }) {
                     <div className="blog-meta">
                         <p className="d-flex align-items-center gap-2">
                             <i className="bi bi-person-circle"></i>
-                            Escrito por<strong>{data.autor}</strong>
+                            Escrito por {data.autor}
                         </p>
                         <p className={`blog-date ${poppins.className}`}>
                             PUBLICADO EM {new Date(data.data_publicacao).toLocaleDateString('pt-BR')}

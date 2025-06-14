@@ -130,7 +130,7 @@ export default function SliderCategorias() {
 
       {/* Espaço */}
       <SwiperSlide>
-        <Link href="/categorias/espaco" className="text-decoration-none">
+        <Link href="#espacos" className="text-decoration-none">
           <div className="card mb-3 cardSwiperCategorias">
             <div className="row g-0 centralizar">
               <div className="col-2 col-md-2">
