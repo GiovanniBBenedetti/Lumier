@@ -56,7 +56,7 @@ mysql -u root -p lumier < ./database/MySqlLumierFinal.sql
 ```bash
 cd backend
 npm install
-npm run dev
+node app.js
 ```
 
 > O backend será executado em `http://localhost:3200`
