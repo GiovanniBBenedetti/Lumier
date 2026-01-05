@@ -49,8 +49,6 @@ cd lumier
 mysql -u root -p lumier < ./database/MySqlLumierFinal.sql
 ```
 
-- Configure as credenciais do banco no arquivo `.env` do backend.
-
 ### 3. Iniciar o Backend
 
 ```bash
